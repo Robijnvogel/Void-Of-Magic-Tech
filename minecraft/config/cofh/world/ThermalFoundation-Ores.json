@@ -1,7 +1,10 @@
 {
     "copper": {
         "template": "uniform",
-        "block": "ThermalFoundation:Ore",
+		"block": [
+			{"name": "ThermalFoundation:Ore", "metadata": 0, "weight":50},
+			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50}
+		],
         "clusterSize": 8,
         "numClusters": 10,
         "minHeight": 40,
@@ -19,7 +22,10 @@
     },
     "tin": {
         "template": "uniform",
-        "block": {"name": "ThermalFoundation:Ore", "metadata": 1},
+		"block": [
+			{"name": "ThermalFoundation:Ore", "metadata": 1, "weight":50},
+			{"name": "IC2:blockOreTin", "metadata": 0, "weight":50}
+		],
         "clusterSize": 8,
         "numClusters": 8,
         "minHeight": 20,
@@ -39,7 +45,8 @@
         "template": "uniform",
         "block": [
             {"name": "ThermalFoundation:Ore", "metadata": 2, "weight":80},
-            {"name": "ThermalFoundation:Ore", "metadata": 3, "weight":20}
+            {"name": "ThermalFoundation:Ore", "metadata": 3, "weight":10},
+			{"name": "IC2:blockOreLead", "metadata": 0, "weight":10}
         ],
         "clusterSize": 8,
         "numClusters": 6,
@@ -59,7 +66,8 @@
     "lead": {
         "template": "uniform",
         "block": [
-            {"name": "ThermalFoundation:Ore", "metadata": 3, "weight": 90},
+            {"name": "ThermalFoundation:Ore", "metadata": 3, "weight": 45},
+			{"name": "IC2:blockOreLead", "metadata": 0, "weight": 45},
             {"name": "ThermalFoundation:Ore", "metadata": 2, "weight": 10}
         ],
         "clusterSize": 8,
@@ -119,7 +127,10 @@
     },
     "copperHigh": {
         "template": "uniform",
-        "block": "ThermalFoundation:Ore",
+        "block": [
+			{"name": "ThermalFoundation:Ore", "metadata": 0, "weight":50},
+			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50}
+		],
         "clusterSize": 8,
         "numClusters": 8,
         "minHeight": 48,
