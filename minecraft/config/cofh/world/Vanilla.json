@@ -298,26 +298,5 @@
             -1,
             1
         ]
-    },
-	"uranium": {
-        "template": "uniform",
-        "block": [
-            {"name": "BigReactors:YelloriteOre", "metadata": 0, "weight": 60},
-            {"name": "IC2:blockOreUran", "metadata": 0, "weight": 40}
-        ],
-        "clusterSize": 3,
-        "numClusters": 6,
-        "minHeight": 5,
-        "maxHeight": 48,
-        "retrogen": "true",
-        "biomeRestriction": "none",
-        "biomes": [
-            "all"
-        ],
-        "dimensionRestriction": "blacklist",
-        "dimensions": [
-            -1,
-            1
-        ]
     }
 }
