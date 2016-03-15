@@ -88,7 +88,7 @@
         "template": "uniform",
 		"block": [
             {"name": "redstone_ore", "metadata": 0, "weight": 90},
-            {"name": "Thaumcraft:blockCustomOre:0", "metadata": 0, "weight": 10}
+            {"name": "Thaumcraft:blockCustomOre", "metadata": 0, "weight": 10}
         ],
         "material": "minecraft:stone",
         "clusterSize": 7,
@@ -183,9 +183,7 @@
         "maxHeight": 48,
         "retrogen": "true",
         "biomeRestriction": "none",
-        "biomes": [
-            "all"
-        ],
+        "biomes": [],
         "dimensionRestriction": "blacklist",
         "dimensions": [
             -1,
