@@ -2,8 +2,11 @@
     "copper": {
         "template": "uniform",
 		"block": [
-			{"name": "ThermalFoundation:Ore", "metadata": 0, "weight":50},
-			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50}
+			{"name": "Forestry:resources", "metadata": 1, "weight":50},
+			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50},
+			{"name": "ImmersiveEngineering:ore", "weight":50},
+			{"name": "Mekanism:OreBlock", "metadata": 1, "weight":50},
+			{"name": "ThermalFoundation:Ore", "metadata": 0, "weight":50}
 		],
         "clusterSize": 8,
         "numClusters": 10,
@@ -23,8 +26,10 @@
     "tin": {
         "template": "uniform",
 		"block": [
-			{"name": "ThermalFoundation:Ore", "metadata": 1, "weight":50},
-			{"name": "IC2:blockOreTin", "metadata": 0, "weight":50}
+			{"name": "Forestry:resources", "metadata": 2, "weight":50},						
+			{"name": "IC2:blockOreTin", "metadata": 0, "weight":50},
+			{"name": "Mekanism:OreBlock", "metadata": 2, "weight":50},
+			{"name": "ThermalFoundation:Ore", "metadata": 1, "weight":50}
 		],
         "clusterSize": 8,
         "numClusters": 8,
@@ -44,9 +49,11 @@
     "silver": {
         "template": "uniform",
         "block": [
-            {"name": "ThermalFoundation:Ore", "metadata": 2, "weight":80},
-            {"name": "ThermalFoundation:Ore", "metadata": 3, "weight":10},
-			{"name": "IC2:blockOreLead", "metadata": 0, "weight":10}
+            {"name": "ThermalFoundation:Ore", "metadata": 2, "weight":60},
+			{"name": "ImmersiveEngineering:ore", "metadata": 3, "weight":60},
+            {"name": "IC2:blockOreLead", "metadata": 0, "weight":10},
+			{"name": "ImmersiveEngineering:ore", "metadata": 2, "weight":10},
+			{"name": "ThermalFoundation:Ore", "metadata": 3, "weight":10}
         ],
         "clusterSize": 8,
         "numClusters": 6,
@@ -66,9 +73,11 @@
     "lead": {
         "template": "uniform",
         "block": [
-            {"name": "ThermalFoundation:Ore", "metadata": 3, "weight": 45},
-			{"name": "IC2:blockOreLead", "metadata": 0, "weight": 45},
-            {"name": "ThermalFoundation:Ore", "metadata": 2, "weight": 10}
+            {"name": "IC2:blockOreLead", "metadata": 0, "weight": 80},
+			{"name": "ImmersiveEngineering:ore", "metadata": 2, "weight":80},
+			{"name": "ThermalFoundation:Ore", "metadata": 3, "weight": 80},
+			{"name": "ImmersiveEngineering:ore", "metadata": 3, "weight":30},
+            {"name": "ThermalFoundation:Ore", "metadata": 2, "weight": 30}
         ],
         "clusterSize": 8,
         "numClusters": 8,
@@ -87,7 +96,10 @@
     },
     "nickel": {
         "template": "uniform",
-        "block": {"name": "ThermalFoundation:Ore", "metadata": 4},
+        "block": [
+			{"name": "ThermalFoundation:Ore", "metadata": 4, "weight":50},
+			{"name": "ImmersiveEngineering:ore", "metadata": 4, "weight":50}
+		],
         "clusterSize": 4,
         "numClusters": 3,
         "minHeight": 5,
@@ -108,7 +120,8 @@
         "generator": "sparse-cluster",
         "block": [
             {"name": "ThermalFoundation:Ore", "metadata": 5, "weight": 80},
-            {"name": "ThermalFoundation:Ore", "metadata": 4, "weight": 20}
+            {"name": "ThermalFoundation:Ore", "metadata": 4, "weight": 10},
+			{"name": "ImmersiveEngineering:ore", "metadata": 4, "weight":10}
         ],
         "clusterSize": 3,
         "numClusters": 1,
@@ -128,13 +141,16 @@
     "copperHigh": {
         "template": "uniform",
         "block": [
-			{"name": "ThermalFoundation:Ore", "metadata": 0, "weight":50},
-			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50}
+			{"name": "Forestry:resources", "metadata": 1, "weight":50},
+			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50},
+			{"name": "ImmersiveEngineering:ore", "weight":50},
+			{"name": "Mekanism:OreBlock", "metadata": 1, "weight":50},
+			{"name": "ThermalFoundation:Ore", "metadata": 0, "weight":50}
 		],
         "clusterSize": 8,
-        "numClusters": 8,
+        "numClusters": 40,
         "minHeight": 48,
-        "maxHeight": 96,
+        "maxHeight": 256,
         "retrogen": "true",
         "biomeRestriction": "none",
         "biomes": [
