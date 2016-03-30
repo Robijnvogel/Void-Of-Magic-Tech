@@ -1,0 +1,26 @@
+{
+  "xrayEnabled": true,
+  "coordsEnabled": true,
+  "flyEnabled": true,
+  "autoEnableFly": true,
+  "profiles": {
+    "XRay": {
+      "defaultValue": true,
+      "blocks": {}
+    },
+    "Cave Finder": {
+      "defaultValue": false,
+      "blocks": {
+        "Torch": true,
+        "Lava": true,
+        "Netherrack": true,
+        "Stone": true
+      }
+    }
+  },
+  "coordinates": [
+    "$d{FPS}",
+    "$aXYZ: {X} / {Y} / {Z}",
+    "$c{Fly}"
+  ]
+}
