@@ -12,6 +12,7 @@ var lootTech = [ <IC2:itemOreIridium>,
     <IC2:itemShardIridium>,
 	<IC2:itemIngot>,
     <IC2:itemIngot:1>,
+	<IC2:itemIngot:2>,
 	<IC2:itemTreetap>,
 	<IC2:blockRubSapling>,
     <NuclearCraft:dominoes>,
@@ -55,6 +56,8 @@ var lootTech = [ <IC2:itemOreIridium>,
     <EnderIO:item.darkSteel_boots>,
     <PneumaticCraft:stopWorm>,
     <PneumaticCraft:nukeVirus>,
+	<SGCraft:sgCoreCrystal>,
+    <SGCraft:sgControllerCrystal>
 ] as IItemStack[];
 
 for item in lootTech {
