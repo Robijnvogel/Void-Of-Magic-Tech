@@ -3,6 +3,7 @@
         "template": "uniform",
 		"block": [
 			{"name": "Forestry:resources", "metadata": 1, "weight":50},
+			{"name": "GalacticraftCore:tile.gcBlockCore", "metadata": 5, "weight":50},
 			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50},
 			{"name": "ImmersiveEngineering:ore", "weight":50},
 			{"name": "Mekanism:OreBlock", "metadata": 1, "weight":50},
@@ -27,7 +28,8 @@
     "tin": {
         "template": "uniform",
 		"block": [
-			{"name": "Forestry:resources", "metadata": 2, "weight":50},						
+			{"name": "Forestry:resources", "metadata": 2, "weight":50},
+			{"name": "GalacticraftCore:tile.gcBlockCore", "metadata": 6, "weight":50},
 			{"name": "IC2:blockOreTin", "metadata": 0, "weight":50},
 			{"name": "Mekanism:OreBlock", "metadata": 2, "weight":50},
 			{"name": "NuclearCraft:blockOre", "metadata": 1, "weight":50},
@@ -51,13 +53,14 @@
     "silver": {
         "template": "uniform",
         "block": [
-            {"name": "ImmersiveEngineering:ore", "metadata": 3, "weight":80},
+            {"name": "factorization:ResourceBlock", "metadata": 0, "weight":80},
+			{"name": "ImmersiveEngineering:ore", "metadata": 3, "weight":80},
             {"name": "NuclearCraft:blockOre", "metadata": 3, "weight":80},
 			{"name": "ThermalFoundation:Ore", "metadata": 2, "weight":80},
-			{"name": "IC2:blockOreLead", "metadata": 0, "weight":15},
-			{"name": "ImmersiveEngineering:ore", "metadata": 2, "weight":15},
-			{"name": "NuclearCraft:blockOre", "metadata": 2, "weight":15},
-			{"name": "ThermalFoundation:Ore", "metadata": 3, "weight":15}
+			{"name": "IC2:blockOreLead", "metadata": 0, "weight":20},
+			{"name": "ImmersiveEngineering:ore", "metadata": 2, "weight":20},
+			{"name": "NuclearCraft:blockOre", "metadata": 2, "weight":20},
+			{"name": "ThermalFoundation:Ore", "metadata": 3, "weight":20}
         ],
         "clusterSize": 8,
         "numClusters": 6,
@@ -77,10 +80,11 @@
     "lead": {
         "template": "uniform",
         "block": [
-            {"name": "IC2:blockOreLead", "metadata": 0, "weight": 60},
-			{"name": "ImmersiveEngineering:ore", "metadata": 2, "weight":60},
-			{"name": "NuclearCraft:blockOre", "metadata": 2, "weight":60},
-			{"name": "ThermalFoundation:Ore", "metadata": 3, "weight": 60},
+            {"name": "IC2:blockOreLead", "metadata": 0, "weight": 80},
+			{"name": "ImmersiveEngineering:ore", "metadata": 2, "weight":80},
+			{"name": "NuclearCraft:blockOre", "metadata": 2, "weight":80},
+			{"name": "ThermalFoundation:Ore", "metadata": 3, "weight": 80},
+			{"name": "factorization:ResourceBlock", "metadata": 0, "weight":20},
 			{"name": "ImmersiveEngineering:ore", "metadata": 3, "weight":20},
             {"name": "NuclearCraft:blockOre", "metadata": 3, "weight":20},
 			{"name": "ThermalFoundation:Ore", "metadata": 2, "weight": 20}
@@ -148,6 +152,7 @@
         "template": "uniform",
         "block": [
 			{"name": "Forestry:resources", "metadata": 1, "weight":50},
+			{"name": "GalacticraftCore:tile.gcBlockCore", "metadata": 5, "weight":50},
 			{"name": "IC2:blockOreCopper", "metadata": 0, "weight":50},
 			{"name": "ImmersiveEngineering:ore", "weight":50},
 			{"name": "Mekanism:OreBlock", "metadata": 1, "weight":50},

@@ -156,7 +156,10 @@
     },
 	"aluminium": {
         "template": "uniform",
-        "block": {"name": "ImmersiveEngineering:ore", "metadata": 1},
+        "block":  [
+			{"name": "GalacticraftCore:tile.gcBlockCore", "metadata": 7, "weight": 50},
+			{"name": "ImmersiveEngineering:ore", "metadata": 1}
+		],
         "material": "minecraft:stone",
         "clusterSize": 6,
         "numClusters": 50,
@@ -168,6 +171,23 @@
         "dimensionRestriction": "blacklist",
         "dimensions": [
             -1,
+            1
+        ]
+    },
+	"FactorizationDarkIron": {
+        "template": "uniform",
+        "block": "factorization:DarkIronOre",
+        "material": "minecraft:stone",
+        "clusterSize": 2,
+        "numClusters": 3,
+        "minHeight": 0,
+        "maxHeight": 10,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "blacklist",
+        "dimensions": [
+			-1,
             1
         ]
     },
@@ -187,6 +207,72 @@
 			-1,
             1
         ]
+    },
+	"GalacticraftSilicon": {
+        "template": "uniform",
+        "block": {"name": "GalacticraftCore:tile.gcBlockCore", "metadata": 8},
+        "material": "minecraft:stone",
+        "clusterSize": 5,
+        "numClusters": 7,
+        "minHeight": 16,
+        "maxHeight": 48,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "blacklist",
+        "dimensions": [
+			-1,
+            1
+        ]
+    },
+	"MagicalcropsMinicio": {
+        "template": "uniform",
+        "block": "magicalcrops:magicalcrops_MinicioOre",
+        "material": "minecraft:stone",
+        "clusterSize": 4,
+        "numClusters": 8,
+        "minHeight": 5,
+        "maxHeight": 48,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "blacklist",
+        "dimensions": [
+			-1,
+            1
+        ]
+    },
+	"MagicalcropsMinicioEnd": {
+        "template": "uniform",
+        "block": "magicalcrops:magicalcrops_MinicioOreEnd",
+        "material": "minecraft:end_stone",
+        "clusterSize": 4,
+        "numClusters": 5,
+        "minHeight": 20,
+        "maxHeight": 64,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "whitelist",
+        "dimensions": [
+			1
+		]
+    },
+	"MagicalcropsMinicioNether": {
+        "template": "uniform",
+        "block": "magicalcrops:magicalcrops_MinicioOreNether",
+        "material": "minecraft:netherrack",
+        "clusterSize": 6,
+        "numClusters": 10,
+        "minHeight": 20,
+        "maxHeight": 128,
+        "retrogen": "true",
+        "biomeRestriction": "whitelist",
+        "biomes": [
+            {"type": "dictionary", "entry": "NETHER"}
+        ],
+        "dimensionRestriction": "none",
+        "dimensions": []
     },
 	"MekanismOsmium": {
         "template": "uniform",
@@ -319,6 +405,23 @@
         "dimensionRestriction": "blacklist",
         "dimensions": [
             -1,
+            1
+        ]
+    },
+	"SGCraftNaquadah": {
+        "template": "uniform",
+        "block": "SGCraft:naquadahOre",
+        "material": "minecraft:stone",
+        "clusterSize": 1,
+        "numClusters": 1,
+        "minHeight": 1,
+        "maxHeight": 32,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "blacklist",
+        "dimensions": [
+			-1,
             1
         ]
     },
