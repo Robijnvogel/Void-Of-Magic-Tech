@@ -154,6 +154,55 @@
         "dimensionRestriction": "none",
         "dimensions": []
     },
+	"MagicalcropsMinicio": {
+        "template": "uniform",
+        "block": "magicalcrops:magicalcrops_MinicioOre",
+        "material": "minecraft:stone",
+        "clusterSize": 4,
+        "numClusters": 8,
+        "minHeight": 5,
+        "maxHeight": 48,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "blacklist",
+        "dimensions": [
+			-1,
+            1
+        ]
+    },
+	"MagicalcropsMinicioEnd": {
+        "template": "uniform",
+        "block": "magicalcrops:magicalcrops_MinicioOreEnd",
+        "material": "minecraft:end_stone",
+        "clusterSize": 4,
+        "numClusters": 5,
+        "minHeight": 20,
+        "maxHeight": 64,
+        "retrogen": "true",
+        "biomeRestriction": "blacklist",
+        "biomes": [],
+        "dimensionRestriction": "whitelist",
+        "dimensions": [
+			1
+		]
+    },
+	"MagicalcropsMinicioNether": {
+        "template": "uniform",
+        "block": "magicalcrops:magicalcrops_MinicioOreNether",
+        "material": "minecraft:netherrack",
+        "clusterSize": 6,
+        "numClusters": 10,
+        "minHeight": 20,
+        "maxHeight": 128,
+        "retrogen": "true",
+        "biomeRestriction": "whitelist",
+        "biomes": [
+            {"type": "dictionary", "entry": "NETHER"}
+        ],
+        "dimensionRestriction": "none",
+        "dimensions": []
+    },
 	"qCraftQuantum": {
         "template": "normal",
         "block": "qCraft:quantumore",
