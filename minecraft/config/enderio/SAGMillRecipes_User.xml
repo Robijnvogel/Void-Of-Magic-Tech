@@ -97,5 +97,192 @@
 -->
 
 <SAGMillRecipes>
+  <recipeGroup name="EnderIO" >
+    <recipe name="IronOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyIron" number="2" />
+        <itemStack oreDictionary="dustTinyTin" number="1" chance="0.05" />
+        <itemStack oreDictionary="dustTinyNickel" number="1" chance="0.1" />
+        <itemStack modID="minecraft" itemName="cobblestone" chance="0.15" />
+      </output>
+    </recipe>
+    <recipe name="GoldOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyGold" number="2" />
+        <itemStack oreDictionary="dustTinyCopper" number="1" chance="0.2" />
+        <itemStack modID="minecraft" itemName="cobblestone" chance="0.15" />
+      </output>
+    </recipe>
+  </recipeGroup>
 
+  <recipeGroup name="Common Ores/Ingots/Blocks" >
+    <recipe name="CopperOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyCopper" number="2" />
+        <itemStack oreDictionary="dustTinyGold" number="1" chance="0.125" />
+        <itemStack modID="minecraft" itemName="cobblestone" chance="0.15" />
+      </output>
+    </recipe>
+	<recipe name="TinOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyTin" number="2" />
+		<itemStack oreDictionary="dustTinyIron" number="1" chance="0.125" />
+        <itemStack modID="minecraft" itemName="cobblestone" chance="0.15" />
+      </output>
+    </recipe>
+    <recipe name="LeadOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyLead" number="2" />
+        <itemStack oreDictionary="dustTinySilver" chance="0.1" />
+        <itemStack modID="minecraft" itemName="cobblestone" chance="0.15" />
+      </output>
+    </recipe>
+    <recipe name="SilverOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySilver" number="2" />
+        <itemStack oreDictionary="dustTinyLead" chance="0.1" />
+      </output>
+    </recipe>
+    <recipe name="NickelOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyNickel" number="2" />
+        <itemStack oreDictionary="dustTinyPlatinum" chance="0.1" />
+      </output>
+    </recipe>
+    <recipe name="AluminiumOre" energyCost="2400" >
+      <input>
+        <itemStack oreDictionary="oreAluminium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyAluminium" number="2" />
+		<itemStack oreDictionary="dustTinyAluminium" number="1" chance="0.1" />
+      </output>
+    </recipe>
+    <recipe name="AluminumOre" energyCost="2400" >
+      <input>
+        <itemStack oreDictionary="oreAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyAluminum" number="2" />
+		<itemStack oreDictionary="dustTinyAluminum" number="1" chance="0.1" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="Factorization" >
+    <recipe name="DarkIronOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyFzDarkIron" number="2" />
+        <itemStack oreDictionary="dustTinyIron" number="1" chance="0.1" />
+		<itemStack oreDictionary="gemDiamond" number="1" chance="0.02" />
+      </output>
+    </recipe>    
+  </recipeGroup>
+
+  <recipeGroup name="Mekanism" >
+    <recipe name="OsmiumOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOsmium" number="2" />
+        <itemStack oreDictionary="dustTinyOsmium" number="1" chance="0.1" />
+      </output>
+    </recipe>    
+  </recipeGroup>
+  
+  <recipeGroup name="Metallurgy" >
+    <recipe name="PlatinumOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="orePlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyPlatinum" number="2" />
+		<itemStack oreDictionary="dustTinyPlatinum" number="1" chance="0.1" />
+      </output>
+    </recipe>    
+    <recipe name="MithrilOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyMithril" number="2" />
+		<itemStack oreDictionary="dustTinyMithril" number="1" chance="0.1" />
+      </output>
+    </recipe>
+  </recipeGroup>
+
+  <recipeGroup name="NuclearCraft" >
+    <recipe name="UraniumOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyUranium" number="2" />
+        <itemStack oreDictionary="dustTinyUranium" number="1" chance="0.1" />
+      </output>
+    </recipe>
+	<recipe name="BoronOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyBoron" number="2" />
+        <itemStack oreDictionary="dustTinyBoron" number="1" chance="0.1" />
+      </output>
+    </recipe>
+	<recipe name="LithiumOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyLithium" number="2" />
+        <itemStack oreDictionary="dustTinyLithium" number="1" chance="0.1" />
+      </output>
+    </recipe>
+	<recipe name="MagnesiumOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyMagnesium" number="2" />
+        <itemStack oreDictionary="dustTinyMagnesium" number="1" chance="0.1" />
+      </output>
+    </recipe>
+	<recipe name="ThoriumOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyThorium" number="2" />
+        <itemStack oreDictionary="dustTinyThorium" number="1" chance="0.1" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
 </SAGMillRecipes>
+
