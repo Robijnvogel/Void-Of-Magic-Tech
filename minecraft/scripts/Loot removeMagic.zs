@@ -41,7 +41,9 @@ var lootMagic = [ <Botania:lexicon>,
     <Thaumcraft:ItemBaubleBlanks:8>,
 	<Thaumcraft:ItemAmuletVis>,
     <Forestry:beeDroneGE>,    
-	<WitchingGadgets:item.WG_Material:8>
+	<WitchingGadgets:item.WG_Material:8>,
+	<EMT:TaintedMjolnir>,
+	<EMT:BaseBaubles>
 ] as IItemStack[];
 
 for item in lootMagic {
