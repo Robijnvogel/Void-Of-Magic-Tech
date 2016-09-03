@@ -1206,6 +1206,11 @@
 		
 	#nuggets as input
 		for i, input in oreDictNuggets {
+			recipes.addShaped(ic2Ingots[i], 
+				[[input, input, input],
+				[input, input, input], 
+				[input, input, input]]);
+			
 			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer
 			IECrusher.addRecipe(ic2TinyDusts[i], input, 2500); #IE Crusher
 			Pulverizer.addRecipe(1000, tfNuggets[i], ic2TinyDusts[i]); #TE Pulverizer
@@ -1368,7 +1373,7 @@
 	
 	#ic2 purified (1)
 		for i, input in ic2CrushedPurified {
-			ThermalCentrifuge.addRecipe([ tmPurified1[i], ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], input, 1000); #thermal centrifuge in configs -> into technomancy
+			ThermalCentrifuge.addRecipe([ tmPurified1[i].withTag({Thaumcraft: 1}), ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], input, 1000); #thermal centrifuge in configs -> into technomancy
 			
 			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 1.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
@@ -1640,12 +1645,6 @@
 			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 8); #MK purification chamber (3x output)
 			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 8); #MK injection chamber (4x output)
 		}
-		
-	#this somehow got removed?
-	recipes.addShaped(<minecraft:gold_ingot>, 
-		[[<ore:nuggetGold>, <ore:nuggetGold>, <ore:nuggetGold>],
-		[<ore:nuggetGold>, <ore:nuggetGold>, <ore:nuggetGold>], 
-		[<ore:nuggetGold>, <ore:nuggetGold>, <ore:nuggetGold>]]);
 
 #todo:
 #1. Handle Uranium processing a bit differently
