@@ -1528,7 +1528,7 @@
 		
 	#tm purified 6 (7)
 		for i, input in tmPurified6 {
-			Dissolution.addRecipe(input, mkSlurries[i] * 800); #MK dissolution chamber
+			Dissolution.addRecipe(input.withTag({Thaumcraft: 2, Botania: 2, "Blood Magic": 2}), mkSlurries[i] * 800); #MK dissolution chamber
 			
 			furnace.addRecipe(tfNuggets[i] * 7, input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 10.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
