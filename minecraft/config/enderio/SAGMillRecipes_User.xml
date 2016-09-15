@@ -2375,7 +2375,7 @@
         <itemStack oreDictionary="clumpIron" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyIron" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Gold Clump" energyCost="1150" >
@@ -2383,7 +2383,7 @@
         <itemStack oreDictionary="clumpGold" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyGold" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="1" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Copper Clump" energyCost="1150" >
@@ -2391,7 +2391,7 @@
         <itemStack oreDictionary="clumpCopper" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyCopper" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="3" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Tin Clump" energyCost="1150" >
@@ -2399,7 +2399,7 @@
         <itemStack oreDictionary="clumpTin" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyTin" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="4" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Silver Clump" energyCost="1150" >
@@ -2407,7 +2407,7 @@
         <itemStack oreDictionary="clumpSilver" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinySilver" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="5" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Lead Clump" energyCost="1150" >
@@ -2415,7 +2415,7 @@
         <itemStack oreDictionary="clumpLead" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyLead" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="6" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Nickel Clump" energyCost="1150" >
@@ -2423,7 +2423,7 @@
         <itemStack oreDictionary="clumpNickel" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyNickel" number="8" exp="0.25" />
+        <itemStack oreDictionary="aobd:dustDirtyNickel" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Platinum Clump" energyCost="1150" >
@@ -2431,7 +2431,7 @@
         <itemStack oreDictionary="clumpPlatinum" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyPlatinum" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyPlatinum" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Mithril Clump" energyCost="1150" >
@@ -2439,7 +2439,7 @@
         <itemStack oreDictionary="clumpMithril" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyMithril" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyMithril" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Aluminum Clump" energyCost="1150" >
@@ -2447,7 +2447,7 @@
         <itemStack oreDictionary="clumpAluminum" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyAluminum" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyAluminum" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Uranium Clump" energyCost="1150" >
@@ -2455,7 +2455,7 @@
         <itemStack oreDictionary="clumpUranium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyUranium" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyUranium" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Osmium Clump" energyCost="1150" >
@@ -2463,7 +2463,7 @@
         <itemStack oreDictionary="clumpOsmium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyOsmium" number="8" exp="0.25" />
+        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="2" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Dark Iron Clump" energyCost="1150" >
@@ -2471,7 +2471,7 @@
         <itemStack oreDictionary="clumpFzDarkIron" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyFzDarkIron" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyFzDarkIron" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Boron Clump" energyCost="1150" >
@@ -2479,7 +2479,7 @@
         <itemStack oreDictionary="clumpBoron" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyBoron" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyBoron" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Lithium Clump" energyCost="1150" >
@@ -2487,7 +2487,7 @@
         <itemStack oreDictionary="clumpLithium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyLithium" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyLithium" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Magnesium Clump" energyCost="1150" >
@@ -2495,7 +2495,7 @@
         <itemStack oreDictionary="clumpMagnesium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyMagnesium" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyMagnesium" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Thorium Clump" energyCost="1150" >
@@ -2503,7 +2503,7 @@
         <itemStack oreDictionary="clumpThorium" />
       </input>
       <output>
-        <itemStack oreDictionary="dustTinyThorium" number="8" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyThorium" number="1" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>

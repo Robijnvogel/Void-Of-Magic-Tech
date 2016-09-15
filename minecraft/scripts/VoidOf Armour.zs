@@ -1,3 +1,8 @@
+#Chestplate = 5 nuggets in shape hopper 3 ingots in shape upside down bucket
+#Leggings = 3 ingots, 4 nuggets
+#Boots = 2 ingots, 2 nuggets
+#Helmet = 2 ingots, 3 nuggets
+
 #start of the armour processing minetweaker script
 
 #Imports
@@ -174,5 +179,3 @@
 				[[nugget, null, nugget],
 				[oreDictIngots[i], null, oreDictIngots[i]]]);	
 		}
-		
-#Don't forget the other 3 Bronze sets
