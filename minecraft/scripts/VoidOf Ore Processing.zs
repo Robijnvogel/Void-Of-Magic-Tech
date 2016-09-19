@@ -1146,7 +1146,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, tfOres[i], tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, tfOres[i], tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 2, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Pulverizer.addRecipe(1000, tfOres[i], ic2TinyDusts[i] * 2, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2x+ output)
 			
@@ -1200,7 +1200,7 @@
 		
 	#ingots as input
 		for i, input in oreDictIngots {
-			recipes.addShapeless(ic2Dusts[i], [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer
+			recipes.addShapeless(ic2Dusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer
 			Macerator.addRecipe(ic2Dusts[i], input); #IC2 macerator
 			Lacerator.addRecipe(input, ic2Dusts[i], 1.0); #FZ Lacerator
 		}
@@ -1212,7 +1212,7 @@
 				[input, input, input], 
 				[input, input, input]]);
 			
-			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer
+			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer
 			IECrusher.addRecipe(ic2TinyDusts[i], input, 2500); #IE Crusher
 			Pulverizer.addRecipe(1000, tfNuggets[i], ic2TinyDusts[i]); #TE Pulverizer
 			Lacerator.addRecipe(input, ic2TinyDusts[i], 1.0); #FZ Lacerator
@@ -1242,7 +1242,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 6, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 2); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 4); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 4, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 4, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2x+ output)
@@ -1342,7 +1342,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 2); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 2, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 2, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2x+ output)
@@ -1409,7 +1409,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 6, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 2); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 4, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 4, input); #IC2 macerator (2x output)
@@ -1449,7 +1449,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, ic2Ingots[i], <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, ic2Ingots[i], tfISmelterSecondaries[i], tfISmelterSecChances[i] * 3); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 4, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 4, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 6, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 6, input); #IC2 macerator (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 6, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 3); #TE Pulverizer (2x+ output)
@@ -1486,7 +1486,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 12, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 12, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 4); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 6, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 6, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 8, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 8, input); #IC2 macerator (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 8, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 4); #TE Pulverizer (2x+ output)
@@ -1523,7 +1523,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 15, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 15, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 5); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 7, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 7, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 10, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 10, input); #IC2 macerator (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 10, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 5); #TE Pulverizer (2x+ output)
@@ -1558,7 +1558,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, ic2Ingots[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, ic2Ingots[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 6); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 9, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 9, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 12, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 12, input); #IC2 macerator (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 12, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 6); #TE Pulverizer (2x+ output)
@@ -1582,7 +1582,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 21, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 21, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 7); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 10, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 10, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 14); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 14, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 14, input); #IC2 macerator (2x output)
@@ -1612,7 +1612,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 5, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 5, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 3); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 4, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 4, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 5); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 5, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 5, input); #IC2 macerator (2x output)
@@ -1636,7 +1636,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 6, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 5 ); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(ic2TinyDusts[i] * 5, [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(ic2TinyDusts[i] * 5, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 6); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 6, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 6, input); #IC2 macerator (2x output)
@@ -1660,7 +1660,7 @@
 			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 7, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 7, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 6); #TE Induction smelter Cinnabar (3x+ output)
 			
-			recipes.addShapeless(mkDirtyDusts[i], [<ImmersiveEngineering:tool>.transformDamage(), input]); #IE Engineers Hammer (1 - 1,5x output)
+			recipes.addShapeless(mkDirtyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
 			IECrusher.addRecipe(mkDirtyDusts[i], input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Pulverizer.addRecipe(1000, input, mkDirtyDusts[i], tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 6); #TE Pulverizer (2x+ output)
 			Lacerator.addRecipe(input, mkDirtyDusts[i], 1.1); #FZ Lacerator (3x output)
