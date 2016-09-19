@@ -69,10 +69,10 @@ key_key.pickItem:-98
 key_key.command:53
 key_key.screenshot:60
 key_key.togglePerspective:63
-key_key.smoothCamera:0
+key_key.smoothCamera:66
 key_key.sprint:29
-key_key.streamStartStop:64
-key_key.streamPauseUnpause:82
+key_key.streamStartStop:0
+key_key.streamPauseUnpause:0
 key_key.streamCommercial:0
 key_key.streamToggleMic:0
 key_key.fullscreen:87
@@ -89,80 +89,84 @@ key_Zoom:44
 key_ALT Key:56
 key_Boost Key:29
 key_Mode Switch Key:33
-key_Side Inventory Key:14
-key_Hub Expand Key:14
+key_Side Inventory Key:0
+key_Hub Expand Key:0
 key_Sprint (FZ):0
 key_PcktCrft Open (FZ):46
-key_keys.fe.yes:66
-key_keys.fe.no:67
-key_Gravi Fly Key:33
-key_Gravi Display Hud:35
-key_Pneumatic Helmet Options:33
-key_Pneumatic Helmet Hack:35
-key_Pneumatic Helmet Debugging Drone:21
+key_keys.fe.yes:0
+key_keys.fe.no:0
+key_Gravi Fly Key:35
+key_Gravi Display Hud:0
+key_Pneumatic Helmet Options:0
+key_Pneumatic Helmet Hack:0
+key_Pneumatic Helmet Debugging Drone:0
 key_Baubles Inventory:48
 key_Change Wand Focus:33
 key_Activate Hover Harness:35
-key_Misc Wand Toggle:34
+key_Misc Wand Toggle:0
 key_waila.keybind.wailaconfig:79
-key_waila.keybind.wailadisplay:76
-key_waila.keybind.liquid:80
-key_waila.keybind.recipe:81
-key_waila.keybind.usage:75
-key_Automagy.key.focusCrafting:46
-key_[GC] Galaxy Map:50
-key_[GC] Open Spaceship Inventory:33
-key_[GC] Toggle Sensor Goggles Mode:37
-key_Glider Toggle:14
-key_Sound Locator:14
-key_Night Vision:14
-key_Goggles of Revealing:14
-key_Step Assist:14
-key_Speed:14
-key_Jump:14
+key_waila.keybind.wailadisplay:79
+key_waila.keybind.liquid:79
+key_waila.keybind.recipe:79
+key_waila.keybind.usage:79
+key_Automagy.key.focusCrafting:0
+key_[GC] Galaxy Map:34
+key_[GC] Open Spaceship Inventory:23
+key_[GC] Toggle Sensor Goggles Mode:0
+key_Unequip:0
+key_Glider Toggle:35
+key_Sound Locator:0
+key_Night Vision:0
+key_Goggles of Revealing:0
+key_Step Assist:0
+key_Speed:0
+key_Jump:0
 key_Yeta Wrench Mode:21
 key_Toggle Electromagnet:0
-key_ttmisc.toggleArmor:22
-key_invtweaks.key.sort:82
-key_Mekanism Item Mode Switch:50
-key_Mekanism Armor Mode Switch:33
-key_Mekanism Voice:22
+key_ttmisc.toggleArmor:35
+key_invtweaks.key.sort:79
+key_Mekanism Item Mode Switch:33
+key_Mekanism Armor Mode Switch:35
+key_Mekanism Voice:47
 key_key.mw_open_gui:50
-key_key.mw_new_marker:82
+key_key.mw_new_marker:79
 key_key.mw_next_map_mode:49
-key_key.mw_next_marker_group:82
-key_key.mw_teleport:52
+key_key.mw_next_marker_group:79
+key_key.mw_teleport:79
 key_key.mw_zoom_in:13
 key_key.mw_zoom_out:12
-key_key.mw_underground_mode:26
-key_Change Arcane Lens:47
-key_Activate Morphic Fingers:14
-key_Toggle Spider Climb:46
-key_Toggle Chameleon Skin:45
-key_TG.keybind.openInv:14
-key_TG.keybind.activeaAbilities:14
-key_key.cofh.empower:14
-key_key.cofh.multimode:14
-key_Teleport:35
-key_Shoot fireballs:33
-key_Blow up yourself:22
-key_Shoot explosive fireballs:48
-key_Throw potions:25
-key_key.ShapeGroups:14
-key_key.SpellBookNext:14
-key_key.SpellBookPrev:14
-key_key.AuraCustomization:14
-key_key.ToggleManaDisplay:14
-key_key.ActivateAffinityAbility:14
-key_key.betterfoliage.gui:66
+key_key.mw_underground_mode:79
+key_Change Arcane Lens:0
+key_Activate Morphic Fingers:0
+key_Toggle Spider Climb:0
+key_Toggle Chameleon Skin:0
+key_key.radialmenu:38
+key_key.useRing:0
+key_key.openPouch:0
+key_TG.keybind.openInv:19
+key_TG.keybind.activeaAbilities:79
+key_key.cofh.empower:0
+key_key.cofh.multimode:0
+key_Teleport:0
+key_Shoot fireballs:0
+key_Blow up yourself:0
+key_Shoot explosive fireballs:0
+key_Throw potions:0
+key_key.ShapeGroups:0
+key_key.SpellBookNext:0
+key_key.SpellBookPrev:0
+key_key.AuraCustomization:0
+key_key.ToggleManaDisplay:0
+key_key.ActivateAffinityAbility:0
+key_key.betterfoliage.gui:68
 key_key.control:29
 key_key.journeymap.map_toggle:36
 key_key.journeymap.zoom_in:13
 key_key.journeymap.zoom_out:12
 key_key.journeymap.minimap_type:27
-key_key.journeymap.minimap_type:27
-key_key.journeymap.minimap_preset:82
-key_key.journeymap.create_waypoint:210
+key_key.journeymap.minimap_type:26
+key_key.journeymap.minimap_preset:79
+key_key.journeymap.create_waypoint:52
 soundCategory_master:1.0
 soundCategory_music:0.0
 soundCategory_record:1.0
