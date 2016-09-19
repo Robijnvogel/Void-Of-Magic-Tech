@@ -28,4 +28,2624 @@
 
 <AlloySmelterRecipes>
 
+  <recipeGroup name="Thermal Expansion Nugget Alloys" >
+    <recipe name="Electrum Nugget" energyCost="300" >
+      <input>
+        <itemStack oreDictionary="nuggetGold" />
+        <itemStack oreDictionary="nuggetSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetElectrum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+    <recipe name="Invar Nugget" energyCost="500" >
+      <input>
+        <itemStack oreDictionary="nuggetNickel" />
+        <itemStack oreDictionary="nuggetIron" number="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetInvar" number="3" exp="0.25" />
+      </output>
+    </recipe>
+    <recipe name="Bronze Nugget" energyCost="700" >
+      <input>
+        <itemStack oreDictionary="nuggetCopper" number="3" />
+        <itemStack oreDictionary="nuggetTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBronze" number="4" />
+      </output>
+    </recipe>
+    <recipe name="Signalum Nugget" energyCost="3500" >
+      <input>
+        <itemStack oreDictionary="nuggetCopper" number="3" />
+        <itemStack oreDictionary="nuggetSilver" />
+        <itemStack modID="minecraft" itemName="redstone" number="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSignalum" number="4" />
+      </output>
+    </recipe>
+    <recipe name="Lumium Nugget" energyCost="3500" >
+	<input>
+        <itemStack oreDictionary="nuggetTin" number="3" />
+        <itemStack oreDictionary="nuggetSilver" />
+        <itemStack modID="minecraft" itemName="glowstone_dust" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLumium" number="4" />
+      </output>
+    </recipe>
+    <recipe name="Electrum Nugget from dusts" energyCost="300" >
+      <input>
+        <itemStack oreDictionary="dustTinyGold" />
+        <itemStack oreDictionary="dustTinySilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetElectrum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+    <recipe name="Invar Nugget from dusts" energyCost="500" >
+      <input>
+        <itemStack oreDictionary="dustTinyNickel" />
+        <itemStack oreDictionary="dustTinyIron" number="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetInvar" number="3" exp="0.25" />
+      </output>
+    </recipe>
+    <recipe name="Bronze Nugget from dusts" energyCost="700" >
+      <input>
+        <itemStack oreDictionary="dustTinyCopper" number="3" />
+        <itemStack oreDictionary="dustTinyTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBronze" number="4" />
+      </output>
+    </recipe>
+    <recipe name="Signalum Nugget from dusts" energyCost="3500" >
+      <input>
+        <itemStack oreDictionary="dustTinyCopper" number="3" />
+        <itemStack oreDictionary="dustTinySilver" />
+        <itemStack modID="minecraft" itemName="redstone" number="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSignalum" number="4" />
+      </output>
+    </recipe>
+    <recipe name="Lumium Nugget from dusts" energyCost="3500" >
+      <input>
+        <itemStack oreDictionary="dustTinyTin" number="3" />
+        <itemStack oreDictionary="dustTinySilver" />
+        <itemStack modID="minecraft" itemName="glowstone_dust" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLumium" number="4" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="Immersive Engineering Nugget Alloys" >
+	<recipe name="Constantan Nugget" energyCost="300" >
+      <input>
+        <itemStack oreDictionary="nuggetCopper" />
+        <itemStack oreDictionary="nuggetNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetConstantan" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Constantan Nugget from dusts" energyCost="300" >
+      <input>
+        <itemStack oreDictionary="dustTinyCopper" />
+        <itemStack oreDictionary="dustTinyNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetConstantan" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing Ores" >
+	<recipe name="Iron Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="orePlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Ore" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="oreThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TCClusters" >
+    <recipe name="Iron Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing FZDirtyGravels" >
+    <recipe name="Iron Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing FZCleanGravels" >
+    <recipe name="Iron Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing FZReducedChunks" >
+    <recipe name="Iron Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing FZCrystals" >
+    <recipe name="Crystalline Iron" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Gold" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Copper" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Tin" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Silver" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Lead" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Nickel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Platinum" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallinePlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Mithril" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Aluminum" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Uranium" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Osmium" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Dark Iron" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Boron" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Lithium" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Magnesium" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Thorium" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing IC2Crushed" >
+    <recipe name="Iron Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing IC2PurifiedCrushed" >
+    <recipe name="Iron Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="3" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TMPurified1" >
+	<recipe name="Iron Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="purePlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TMPurified2" >
+	<recipe name="Iron Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureIron" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureGold" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureCopper" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureTin" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureSilver" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureLead" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureNickel" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="purePlatinum" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureMithril" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureAluminum" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureUranium" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureOsmium" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureFzDarkIron" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureBoron" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureLithium" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureMagnesium" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureThorium" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TMPurified3" >
+	<recipe name="Iron Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureIron" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureGold" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureCopper" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureTin" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureSilver" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureLead" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureNickel" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="purePlatinum" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureMithril" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureAluminum" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureUranium" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureOsmium" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureFzDarkIron" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureBoron" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureLithium" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureMagnesium" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureThorium" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TMPurified4" >
+	<recipe name="Iron Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureIron" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureGold" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureCopper" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureTin" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureSilver" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureLead" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureNickel" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="purePlatinum" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureMithril" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureAluminum" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureUranium" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureOsmium" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureFzDarkIron" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureBoron" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureLithium" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureMagnesium" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureThorium" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="10" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TMPurified5" >
+	<recipe name="Iron Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureIron" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureGold" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureCopper" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureTin" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureSilver" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureLead" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureNickel" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="purePlatinum" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureMithril" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureAluminum" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureUranium" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureOsmium" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureFzDarkIron" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureBoron" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureLithium" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureMagnesium" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureThorium" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="12" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing TMPurified6" >
+	<recipe name="Iron Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureIron" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureGold" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureCopper" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureTin" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureSilver" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureLead" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureNickel" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="purePlatinum" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureMithril" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureAluminum" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureUranium" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureOsmium" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureFzDarkIron" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureBoron" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureLithium" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureMagnesium" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureThorium" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="14" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing MKCrystals" >
+    <recipe name="Iron Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing MKShards" >
+    <recipe name="Iron Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing MKClumps" >
+    <recipe name="Iron Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpSilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
+  <recipeGroup name="VoidOf Ore Processing MKDirtyDusts" >
+    <recipe name="Iron Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Gold Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyGold" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetGold" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Copper Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyCopper" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetCopper" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Tin Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyTin" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetTin" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Silver Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtySilver" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetSilver" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lead Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyLead" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLead" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Nickel Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyNickel" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetNickel" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Platinum Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyPlatinum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetPlatinum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Mithril Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyMithril" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMithril" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Aluminum Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyAluminum" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetAluminum" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Uranium Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyUranium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetUranium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Osmium Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyOsmium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetOsmium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Dark Iron Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyFzDarkIron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetFzDarkIron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Boron Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyBoron" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetBoron" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Lithium Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyLithium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetLithium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Magnesium Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyMagnesium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetMagnesium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Thorium Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyThorium" />
+      </input>
+      <output>
+        <itemStack oreDictionary="nuggetThorium" number="8" exp="0.25" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
 </AlloySmelterRecipes>

@@ -3,9 +3,11 @@
 #Imports
 	import minetweaker.item.IItemStack;
 	import minetweaker.item.IIngredient;
+	import minetweaker.data.IData;
 	import modtweaker.gas.IGasStack;
 
 	import mods.botania.ManaInfusion;
+	import mods.factorization.Crystallizer as FZCrystallizer;
 	import mods.factorization.Lacerator;
 	import mods.factorization.SlagFurnace;
 	import mods.ic2.Macerator;
@@ -13,10 +15,13 @@
 	import mods.ic2.ThermalCentrifuge;
 	import mods.immersiveengineering.ArcFurnace;
 	import mods.immersiveengineering.Crusher as IECrusher;
-	import mods.mekanism.Enrichment;
-	import mods.mekanism.Purification;
+	import mods.mekanism.chemical.Crystallizer as MKCrystallizer;
 	import mods.mekanism.chemical.Injection;
 	import mods.mekanism.chemical.Dissolution;
+	import mods.mekanism.Combiner;
+	import mods.mekanism.Crusher as MKCrusher;
+	import mods.mekanism.Enrichment;
+	import mods.mekanism.Purification;
 	import mods.thermalexpansion.Furnace as RSFurnace;
 	import mods.thermalexpansion.Pulverizer;
 	import mods.thermalexpansion.Smelter as ISmelter;
@@ -42,14 +47,24 @@
 	#14 -> Lithium
 	#15 -> Magnesium
 	#16 -> Thorium
-	#others?
 
 	var oredictOres = [ <ore:oreIron>,
 		<ore:oreGold>,
 		<ore:oreCopper>,
 		<ore:oreTin>,
 		<ore:oreSilver>,
-		<ore:oreLead>
+		<ore:oreLead>,
+		<ore:oreNickel>,
+		<ore:orePlatinum>,
+		<ore:oreMithril>,
+		<ore:oreAluminum>,
+		<ore:oreUranium>,
+		<ore:oreOsmium>,
+		<ore:oreFzDarkIron>,
+		<ore:oreBoron>,
+		<ore:oreLithium>,
+		<ore:oreMagnesium>,
+		<ore:oreThorium>		
 	] as IIngredient[];
 
 	var oredictDusts = [ <ore:dustIron>,
@@ -57,15 +72,37 @@
 		<ore:dustCopper>,
 		<ore:dustTin>,
 		<ore:dustSilver>,
-		<ore:dustLead>
+		<ore:dustLead>,
+		<ore:dustNickel>,
+		<ore:dustPlatinum>,
+		<ore:dustMithril>,
+		<ore:dustAluminum>,
+		<ore:dustUranium>,
+		<ore:dustOsmium>,
+		<ore:dustFzDarkIron>,
+		<ore:dustBoron>,
+		<ore:dustLithium>,
+		<ore:dustMagnesium>,
+		<ore:dustThorium>
 	] as IIngredient[];
 
 	var oreDictIngots = [ <ore:ingotIron>,
 		<ore:ingotGold>,
 		<ore:ingotCopper>,
 		<ore:ingotTin>,
-		<ore:IngotSilver>,
-		<ore:IngotLead>
+		<ore:ingotSilver>,
+		<ore:ingotLead>,
+		<ore:ingotNickel>,
+		<ore:ingotPlatinum>,
+		<ore:ingotMithril>,
+		<ore:ingotAluminum>,
+		<ore:ingotUranium>,
+		<ore:ingotOsmium>,
+		<ore:ingotFzDarkIron>,
+		<ore:ingotBoron>,
+		<ore:ingotLithium>,
+		<ore:ingotMagnesium>,
+		<ore:ingotThorium>
 	] as IIngredient[];
 
 	var oreDictNuggets = [ <ore:nuggetIron>,
@@ -73,7 +110,37 @@
 		<ore:nuggetCopper>,
 		<ore:nuggetTin>,
 		<ore:nuggetSilver>,
-		<ore:nuggetLead>
+		<ore:nuggetLead>,
+		<ore:nuggetNickel>,
+		<ore:nuggetPlatinum>,
+		<ore:nuggetMithril>,
+		<ore:nuggetAluminum>,
+		<ore:nuggetUranium>,
+		<ore:nuggetOsmium>,
+		<ore:nuggetFzDarkIron>,
+		<ore:nuggetBoron>,
+		<ore:nuggetLithium>,
+		<ore:nuggetMagnesium>,
+		<ore:nuggetThorium>
+	] as IIngredient[];
+	
+	var oreDictBlocks = [ <ore:blockIron>,
+		<ore:blockGold>,
+		<ore:blockCopper>,
+		<ore:blockTin>,
+		<ore:blockSilver>,
+		<ore:blockLead>,
+		<ore:blockNickel>,
+		<ore:blockPlatinum>,
+		<ore:blockMithril>,
+		<ore:blockAluminum>,
+		<ore:blockUranium>,
+		<ore:blockOsmium>,
+		<ore:blockFzDarkIron>,
+		<ore:blockBoron>,
+		<ore:blockLithium>,
+		<ore:blockMagnesium>,
+		<ore:blockThorium>
 	] as IIngredient[];
 
 	var tfOres = [ <minecraft:iron_ore>,
@@ -81,7 +148,18 @@
 		<ThermalFoundation:Ore>, #copper
 		<ThermalFoundation:Ore:1>, #tin
 		<ThermalFoundation:Ore:2>, #silver
-		<ThermalFoundation:Ore:3> #lead
+		<ThermalFoundation:Ore:3>, #lead
+		<ThermalFoundation:Ore:4>, #nickel
+		<ThermalFoundation:Ore:5>, #platinum
+		<ThermalFoundation:Ore:6>, #mithril
+		<ImmersiveEngineering:ore:1>, #aluminium
+		<NuclearCraft:blockOre:4>, #uranium
+		<Mekanism:OreBlock>, #osmium
+		<factorization:DarkIronOre>, #dark iron
+		<NuclearCraft:blockOre:8>, #boron
+		<NuclearCraft:blockOre:7>, #lithium
+		<NuclearCraft:blockOre:9>, #magnesium
+		<NuclearCraft:blockOre:5> #thorium
 	] as IItemStack[];
 
 	var tfNuggets = [ <ThermalFoundation:material:8>, #iron
@@ -100,7 +178,7 @@
 		<aobd:nuggetBoron>, #boron
 		<aobd:nuggetLithium>, #lithium
 		<aobd:nuggetMagnesium>, #magnesium
-		<aobd:nuggetThorium> #thorium		
+		<aobd:nuggetThorium> #thorium
 	] as IItemStack[];
 
 	var ic2Ingots = [ <minecraft:iron_ingot>,
@@ -114,12 +192,12 @@
 		<ThermalFoundation:material:70>, #mithril
 		<ImmersiveEngineering:metal:1>, #aluminium
 		<NuclearCraft:material:4>, #uranium
-		<Mekanism:ingot:1>, #osmium
+		<Mekanism:Ingot:1>, #osmium
 		<factorization:dark_iron_ingot>, #dark iron
 		<NuclearCraft:material:43>, #boron
 		<NuclearCraft:material:42>, #lithium
 		<NuclearCraft:material:50>, #magnesium
-		<NuclearCraft:material:5>, #thorium		
+		<NuclearCraft:material:5> #thorium
 	] as IItemStack[];
 
 	var ieIngots = [ <minecraft:iron_ingot>,
@@ -128,7 +206,36 @@
 		<ThermalFoundation:material:65>, #tin
 		<ImmersiveEngineering:metal:3>, #silver
 		<ImmersiveEngineering:metal:2>, #lead
-		<ImmersiveEngineering:metal:4> #nickel
+		<ImmersiveEngineering:metal:4>, #nickel
+		<ThermalFoundation:material:69>, #platinum
+		<ThermalFoundation:material:70>, #mithril
+		<ImmersiveEngineering:metal:1>, #aluminium
+		<NuclearCraft:material:4>, #uranium
+		<Mekanism:Ingot:1>, #osmium
+		<factorization:dark_iron_ingot>, #dark iron
+		<NuclearCraft:material:43>, #boron
+		<NuclearCraft:material:42>, #lithium
+		<NuclearCraft:material:50>, #magnesium
+		<NuclearCraft:material:5> #thorium
+	] as IItemStack[];
+	
+	var tfBlocks = [ <minecraft:iron_block>,
+		<minecraft:gold_block>,
+		<ThermalFoundation:Storage>, #copper
+		<ThermalFoundation:Storage:1>, #tin
+		<ThermalFoundation:Storage:2>, #silver
+		<ThermalFoundation:Storage:3>, #lead
+		<ThermalFoundation:Storage:4>, #nickel
+		<ThermalFoundation:Storage:5>, #platinum
+		<ThermalFoundation:Storage:6>, #mithril
+		<ImmersiveEngineering:storage:1>, #aluminium
+		<NuclearCraft:blockBlock:4>, #uranium
+		<Mekanism:BasicBlock>, #osmium
+		<factorization:ResourceBlock:3>, #dark iron
+		<NuclearCraft:blockBlock:9>, #boron
+		<NuclearCraft:blockBlock:8>, #lithium
+		<NuclearCraft:blockBlock:10>, #magnesium
+		<NuclearCraft:blockBlock:5> #thorium
 	] as IItemStack[];
 
 	var ic2Dusts = [ <IC2:itemDust:5>, #iron
@@ -156,7 +263,18 @@
 		<ImmersiveEngineering:metal:10>, #copper
 		<ThermalFoundation:material:33>, #tin
 		<ImmersiveEngineering:metal:13>, #silver
-		<ImmersiveEngineering:metal:12> #lead
+		<ImmersiveEngineering:metal:12>, #lead
+		<ImmersiveEngineering:metal:14>, #nickel
+		<ThermalFoundation:material:37>, #platinum
+		<ThermalFoundation:material:38>, #mithril
+		<ImmersiveEngineering:metal:11>, #aluminium
+		<NuclearCraft:material:19>, #uranium
+		<Mekanism:Dust:2>, #osmium
+		<aobd:dustFzDarkIron>, #dark iron
+		<NuclearCraft:material:45>, #boron
+		<IC2:itemDust:14>, #lithium
+		<NuclearCraft:material:51>, #magnesium
+		<NuclearCraft:material:20> #thorium
 	] as IItemStack[];
 
 	var ic2TinyDusts = [ <IC2:itemDustSmall>, #iron
@@ -183,7 +301,18 @@
 		<IC2:itemCrushedOre:1>, #copper
 		<IC2:itemCrushedOre:3>, #tin
 		<IC2:itemCrushedOre:5>, #silver
-		<IC2:itemCrushedOre:6> #lead
+		<IC2:itemCrushedOre:6>, #lead
+		<aobd:crushedNickel>, #nickel
+		<aobd:crushedPlatinum>, #platinum
+		<aobd:crushedMithril>, #mithril
+		<aobd:crushedAluminum>, #aluminium
+		<IC2:itemCrushedOre:4>, #uranium
+		<aobd:crushedOsmium>, #osmium
+		<aobd:crushedFzDarkIron>, #dark iron
+		<aobd:crushedBoron>, #boron
+		<aobd:crushedLithium>, #lithium
+		<aobd:crushedMagnesium>, #magnesium
+		<aobd:crushedThorium> #thorium
 	] as IItemStack[];
 
 	var ic2CrushedPurified = [ <IC2:itemPurifiedCrushedOre>, #iron
@@ -191,7 +320,18 @@
 		<IC2:itemPurifiedCrushedOre:1>, #copper
 		<IC2:itemPurifiedCrushedOre:3>, #tin
 		<IC2:itemPurifiedCrushedOre:5>, #silver
-		<IC2:itemPurifiedCrushedOre:6> #lead
+		<IC2:itemPurifiedCrushedOre:6>, #lead
+		<aobd:crushedPurifiedNickel>, #nickel
+		<aobd:crushedPurifiedPlatinum>, #platinum
+		<aobd:crushedPurifiedMithril>, #mithril
+		<aobd:crushedPurifiedAluminum>, #aluminium
+		<IC2:itemPurifiedCrushedOre:4>, #uranium
+		<aobd:crushedPurifiedOsmium>, #osmium
+		<aobd:crushedPurifiedFzDarkIron>, #dark iron
+		<aobd:crushedPurifiedBoron>, #boron
+		<aobd:crushedPurifiedLithium>, #lithium
+		<aobd:crushedPurifiedMagnesium>, #magnesium
+		<aobd:crushedPurifiedThorium> #thorium
 	] as IItemStack[];
 
 	var mkClumps = [ <Mekanism:Clump>, #iron
@@ -200,6 +340,17 @@
 		<Mekanism:Clump:4>, #tin
 		<Mekanism:Clump:5>, #silver
 		<Mekanism:Clump:6>, #lead
+		<aobd:clumpNickel>, #nickel
+		<aobd:clumpPlatinum>, #platinum
+		<aobd:clumpMithril>, #mithril
+		<aobd:clumpAluminum>, #aluminium
+		<aobd:clumpUranium>, #uranium
+		<Mekanism:Clump:2>, #osmium
+		<aobd:clumpFzDarkIron>, #dark iron
+		<aobd:clumpBoron>, #boron
+		<aobd:clumpLithium>, #lithium
+		<aobd:clumpMagnesium>, #magnesium
+		<aobd:clumpThorium> #thorium
 	] as IItemStack[];
 
 	var mkCrystals = [<Mekanism:Crystal>, #iron
@@ -208,6 +359,17 @@
 		<Mekanism:Crystal:4>, #tin
 		<Mekanism:Crystal:5>, #silver
 		<Mekanism:Crystal:6>, #lead
+		<aobd:crystalNickel>, #nickel
+		<aobd:crystalPlatinum>, #platinum
+		<aobd:crystalMithril>, #mithril
+		<aobd:crystalAluminum>, #aluminium
+		<aobd:crystalUranium>, #uranium
+		<Mekanism:Crystal:2>, #osmium
+		<aobd:crystalFzDarkIron>, #dark iron
+		<aobd:crystalBoron>, #boron
+		<aobd:crystalLithium>, #lithium
+		<aobd:crystalMagnesium>, #magnesium
+		<aobd:crystalThorium> #thorium
 	] as IItemStack[];
 
 	var mkShards = [ <Mekanism:Shard>, #iron
@@ -216,6 +378,17 @@
 		<Mekanism:Shard:4>, #tin
 		<Mekanism:Shard:5>, #silver
 		<Mekanism:Shard:6>, #lead
+		<aobd:shardNickel>, #nickel
+		<aobd:shardPlatinum>, #platinum
+		<aobd:shardMithril>, #mithril
+		<aobd:shardAluminum>, #aluminium
+		<aobd:shardUranium>, #uranium
+		<Mekanism:Shard:2>, #osmium
+		<aobd:shardFzDarkIron>, #dark iron
+		<aobd:shardBoron>, #boron
+		<aobd:shardLithium>, #lithium
+		<aobd:shardMagnesium>, #magnesium
+		<aobd:shardThorium> #thorium
 	] as IItemStack[];
 
 	var mkDirtyDusts = [ <Mekanism:DirtyDust>, #iron
@@ -224,49 +397,93 @@
 		<Mekanism:DirtyDust:4>, #tin
 		<Mekanism:DirtyDust:5>, #silver
 		<Mekanism:DirtyDust:6>, #lead
+		<aobd:dustDirtyNickel>, #nickel
+		<aobd:dustDirtyPlatinum>, #platinum
+		<aobd:dustDirtyMithril>, #mithril
+		<aobd:dustDirtyAluminum>, #aluminium
+		<aobd:dustDirtyUranium>, #uranium
+		<Mekanism:DirtyDust:2>, #osmium
+		<aobd:dustDirtyFzDarkIron>, #dark iron
+		<aobd:dustDirtyBoron>, #boron
+		<aobd:dustDirtyLithium>, #lithium
+		<aobd:dustDirtyMagnesium>, #magnesium
+		<aobd:dustDirtyThorium> #thorium
 	] as IItemStack[];
 
-	var mkSlurries = [ <gas:iron>, #iron
-		<gas:gold>, #gold
-		<gas:copper>, #copper
-		<gas:tin>, #tin
-		<gas:silver>, #silver
-		<gas:lead>, #lead
-		<gas:nickel>, #nickel
-		<gas:platinum>, #platinum
-		<gas:mithril>, #mithril
-		<gas:aluminium>, #aluminium
-		<gas:uranium>, #uranium
-		<gas:osmium>, #osmium
-		<gas:fzdarkiron>, #dark iron
-		<gas:boron>, #boron
-		<gas:lithium>, #lithium
-		<gas:magnesium>, #magnesium
-		<gas:thorium>, #thorium
+	var mkSlurries = [ <gas:iron>,
+		<gas:gold>,
+		<gas:copper>,
+		<gas:tin>,
+		<gas:silver>,
+		<gas:lead>,
+		<gas:Nickel>,
+		<gas:Platinum>,
+		<gas:Mithril>,
+		<gas:Aluminum>,
+		<gas:Uranium>,
+		<gas:osmium>,
+		<gas:FzDarkIron>,
+		<gas:Boron>,
+		<gas:Lithium>,
+		<gas:Magnesium>,
+		<gas:Thorium>
 	] as IGasStack[];
 
-	var mkCleanSlurries = [ <gas:cleanIron>, #Iron
-		<gas:cleanGold>, #gold
-		<gas:cleanCopper>, #copper
-		<gas:cleanTin>, #tin
-		<gas:cleanSilver>, #silver
-		<gas:cleanLead>, #lead
+	var mkCleanSlurries = [ <gas:cleanIron>,
+		<gas:cleanGold>,
+		<gas:cleanCopper>,
+		<gas:cleanTin>,
+		<gas:cleanSilver>,
+		<gas:cleanLead>,
+		<gas:cleanNickel>,
+		<gas:cleanPlatinum>,
+		<gas:cleanMithril>,
+		<gas:cleanAluminum>,
+		<gas:cleanUranium>,
+		<gas:cleanOsmium>,
+		<gas:cleanFzDarkIron>,
+		<gas:cleanBoron>,
+		<gas:cleanLithium>,
+		<gas:cleanMagnesium>,
+		<gas:cleanThorium>
 	] as IGasStack[];
 
 	var tfISmelterRichChances = [ 5, #iron
-		60, #gold
+		20, #gold
 		5, #copper
 		5, #tin
 		5, #silver
-		5 #lead
+		5, #lead
+		15, #nickel
+		30, #platinum
+		15, #mithril
+		5, #aluminium
+		15, #uranium
+		15, #osmium
+		5, #dark iron
+		5, #boron
+		5, #lithium
+		5, #magnesium
+		5 #thorium
 	] as int[];
 
-	var tfISmelterSecondaries = [ <ThermalFoundation:material:100>, #iron -> ferrous
+	var tfISmelterSecondaries = [ <ThermalFoundation:material:100>, #iron -> nickel
 		<ThermalExpansion:material:515>, #gold -> rich slag
 		<minecraft:gold_nugget>, #copper -> gold
 		<ThermalExpansion:material:8>, #tin -> iron
 		<ThermalFoundation:material:99>, #silver -> lead
-		<ThermalFoundation:material:98> #lead -> silver
+		<ThermalFoundation:material:98>, #lead -> silver
+		<ThermalFoundation:material:101>, #nickel -> platinum
+		<ThermalExpansion:material:515>, #platinum -> rich slag
+		<ThermalExpansion:material:515>, #mithril -> rich slag
+		<ImmersiveEngineering:metal:23>, #aluminium -> aluminium
+		<IC2:itemUran235small>, #uranium -> uranium
+		<aobd:nuggetOsmium>, #osmium -> osmium
+		<ThermalFoundation:material:98>, #dark iron -> silver
+		<aobd:nuggetBoron>, #boron -> boron
+		<aobd:nuggetLithium>, #lithium -> lithium
+		<aobd:nuggetMagnesium>, #magnesium -> magnesium
+		<aobd:nuggetThorium> #thorium -> thorium
 	] as IItemStack[];
 	
 	var tfISmelterSecChances = [ 100, #iron
@@ -274,15 +491,37 @@
 		100, #copper
 		100, #tin
 		100, #silver
-		100 #lead
+		100, #lead
+		100, #nickel
+		75, #platinum
+		75, #mithril
+		100, #aluminium
+		100, #uranium
+		100, #osmium
+		100, #dark iron
+		100, #boron
+		100, #lithium
+		100, #magnesium
+		100 #thorium
 	] as int[];
 	
-	var tfPulvSecondaries = [ <aobd:dustTinyNickel>, #iron -> ferrous
+	var tfPulvSecondaries = [ <aobd:dustTinyNickel>, #iron -> nickel
 		<ThermalFoundation:material:20>, #gold -> cinnabar
 		<IC2:itemDustSmall:2>, #copper -> gold
 		<IC2:itemDustSmall>, #tin -> iron
 		<IC2:itemDustSmall:5>, #silver -> lead
-		<IC2:itemDustSmall:4> #lead -> silver
+		<IC2:itemDustSmall:4>, #lead -> silver
+		<aobd:dustTinyPlatinum>, #nickel -> platinum
+		<ThermalFoundation:material:20>, #platinum -> cinnabar
+		<ThermalFoundation:material:20>, #mithril -> cinnabar
+		<aobd:dustTinyAluminum>, #aluminium -> aluminium
+		<aobd:dustTinyUranium>, #uranium -> uranium
+		<aobd:dustTinyOsmium>, #osmium -> osmium
+		<IC2:itemDustSmall:4>, #dark iron -> silver
+		<aobd:dustTinyBoron>, #boron -> boron
+		<IC2:itemDustSmall:7>, #lithium -> lithium
+		<aobd:dustTinyMagnesium>, #magnesium -> magnesium
+		<aobd:dustTinyThorium> #thorium -> thorium
 	] as IItemStack[];
 	
 	var tfPulvSecondaryChances = [ 10, #iron
@@ -290,15 +529,37 @@
 		10, #copper
 		10, #tin
 		10, #silver
-		10 #lead
+		10, #lead
+		10, #nickel
+		10, #platinum
+		5, #mithril
+		10, #aluminium
+		10, #uranium
+		10, #osmium
+		10, #dark iron
+		10, #boron
+		10, #lithium
+		10, #magnesium
+		10 #thorium
 	] as int[];
 	
 	var ieCrusherSecondaries = [ <aobd:dustTinyNickel>, #iron -> ferrous
 		<IC2:itemDustSmall:2>, #gold -> gold
 		<minecraft:cobblestone>, #copper -> stone
-		<minecraft:cobblestone>, #tin -> stone
+		<IC2:itemDustSmall>, #tin -> iron
 		<IC2:itemDustSmall:5>, #silver -> lead
-		<IC2:itemDustSmall:4> #lead -> silver
+		<IC2:itemDustSmall:4>, #lead -> silver
+		<aobd:dustTinyPlatinum>, #nickel -> platinum
+		<aobd:dustTinyPlatinum>, #platinum
+		<IC2:itemDustSmall:4>, #mithril -> silver
+		<aobd:dustTinyAluminum>, #aluminium
+		<IC2:itemDustSmall:5>, #uranium -> lead
+		<aobd:dustTinyOsmium>, #osmium
+		<IC2:itemDustSmall>, #dark iron -> iron
+		<aobd:dustTinyBoron>, #boron
+		<IC2:itemDustSmall:7>, #lithium
+		<aobd:dustTinyMagnesium>, #magnesium
+		<aobd:dustTinyThorium> #thorium
 	] as IItemStack[];
 	
 	var ic2ThermCentSecondaries = [ <aobd:dustTinyNickel>, #iron -> ferrous
@@ -326,6 +587,17 @@
 		<Thaumcraft:ItemNugget:18>, #tin
 		<Thaumcraft:ItemNugget:19>, #silver
 		<Thaumcraft:ItemNugget:20>, #lead
+		<WitchingGadgets:item.WG_Cluster:3>, #nickel
+		<WitchingGadgets:item.WG_Cluster:7>, #platinum
+		<WitchingGadgets:item.WG_Cluster:24>, #mithril
+		<WitchingGadgets:item.WG_Cluster>, #aluminium
+		<aobd:clusterUranium>, #uranium
+		<aobd:clusterOsmium>, #osmium
+		<aobd:clusterFzDarkIron>, #dark iron
+		<aobd:clusterBoron>, #boron
+		<aobd:clusterLithium>, #lithium
+		<aobd:clusterMagnesium>, #magnesium
+		<aobd:clusterThorium> #thorium
 	] as IItemStack[];
 
 	var fzCrystallines = [ <factorization:ore/crystal>, #Iron
@@ -334,14 +606,36 @@
 		<factorization:ore/crystal:3>, #tin
 		<factorization:ore/crystal:5>, #silver
 		<factorization:ore/crystal:2>, #lead
+		<aobd:crystallineNickel>, #nickel
+		<aobd:crystallinePlatinum>, #platinum
+		<aobd:crystallineMithril>, #mithril
+		<aobd:crystallineAluminum>, #aluminium
+		<aobd:crystallineUranium>, #uranium
+		<aobd:crystallineOsmium>, #osmium
+		<factorization:ore/crystal:10>, #dark iron
+		<aobd:crystallineBoron>, #boron
+		<aobd:crystallineLithium>, #lithium
+		<aobd:crystallineMagnesium>, #magnesium
+		<aobd:crystallineThorium> #thorium
 	] as IItemStack[];
 
 	var fzCleanGravels = [ <factorization:ore/clean>, #Iron
 		<factorization:ore/clean:1>, #gold
 		<factorization:ore/clean:4>, #copper
 		<factorization:ore/clean:3>, #tin
-		<factorization:ore/clean:5>, #silver
+		<factorization:ore/clean:6>, #silver
 		<factorization:ore/clean:2>, #lead
+		<aobd:cleanGravelNickel>, #nickel
+		<aobd:cleanGravelPlatinum>, #platinum
+		<aobd:cleanGravelMithril>, #mithril
+		<aobd:cleanGravelAluminum>, #aluminium
+		<aobd:cleanGravelUranium>, #uranium
+		<aobd:cleanGravelOsmium>, #osmium
+		<factorization:ore/clean:10>, #dark iron
+		<aobd:cleanGravelBoron>, #boron
+		<aobd:cleanGravelLithium>, #lithium
+		<aobd:cleanGravelMagnesium>, #magnesium
+		<aobd:cleanGravelThorium> #thorium
 	] as IItemStack[];
 
 	var fzReducedChunks = [ <factorization:ore/reduced>, #Iron
@@ -350,14 +644,36 @@
 		<factorization:ore/reduced:3>, #tin
 		<factorization:ore/reduced:5>, #silver
 		<factorization:ore/reduced:2>, #lead
+		<aobd:reducedNickel>, #nickel
+		<aobd:reducedPlatinum>, #platinum
+		<aobd:reducedMithril>, #mithril
+		<aobd:reducedAluminum>, #aluminium
+		<aobd:reducedUranium>, #uranium
+		<aobd:reducedOsmium>, #osmium
+		<factorization:ore/reduced:10>, #dark iron
+		<aobd:reducedBoron>, #boron
+		<aobd:reducedLithium>, #lithium
+		<aobd:reducedMagnesium>, #magnesium
+		<aobd:reducedThorium> #thorium
 	] as IItemStack[];
 
 	var fzDirtyGravels = [ <factorization:ore/gravel>, #Iron
 		<factorization:ore/gravel:1>, #gold
 		<factorization:ore/gravel:4>, #copper
 		<factorization:ore/gravel:3>, #tin
-		<factorization:ore/gravel:5>, #silver
+		<factorization:ore/gravel:6>, #silver
 		<factorization:ore/gravel:2>, #lead
+		<aobd:dirtyGravelNickel>, #nickel
+		<aobd:dirtyGravelPlatinum>, #platinum
+		<aobd:dirtyGravelMithril>, #mithril
+		<aobd:dirtyGravelAluminum>, #aluminium
+		<aobd:dirtyGravelUranium>, #uranium
+		<aobd:dirtyGravelOsmium>, #osmium
+		<factorization:ore/gravel:10>, #dark iron
+		<aobd:dirtyGravelBoron>, #boron
+		<aobd:dirtyGravelLithium>, #lithium
+		<aobd:dirtyGravelMagnesium>, #magnesium
+		<aobd:dirtyGravelThorium> #thorium
 	] as IItemStack[];
 
 	var tmPurified1 = [ <technom:pureIron>,
@@ -369,14 +685,14 @@
 		<technom:pureNickel>,
 		<technom:purePlatinum>,
 		<technom:pureMithril>,
-		<technom:pureAluminium>,
+		<technom:pureAluminum>,
 		<technom:pureUranium>,
 		<technom:pureOsmium>,
 		<technom:pureFzDarkIron>,
 		<technom:pureBoron>,
 		<technom:pureLithium>,
 		<technom:pureMagnesium>,
-		<technom:pureThorium>,
+		<technom:pureThorium>
 	] as IItemStack[];
 	
 	var tmPurified2 = [ <technom:pureIron:1>,
@@ -384,7 +700,18 @@
 		<technom:pureCopper:1>,
 		<technom:pureTin:1>,
 		<technom:pureSilver:1>,
-		<technom:pureLead:1>		
+		<technom:pureLead:1>,
+		<technom:pureNickel:1>,
+		<technom:purePlatinum:1>,
+		<technom:pureMithril:1>,
+		<technom:pureAluminum:1>,
+		<technom:pureUranium:1>,
+		<technom:pureOsmium:1>,
+		<technom:pureFzDarkIron:1>,
+		<technom:pureBoron:1>,
+		<technom:pureLithium:1>,
+		<technom:pureMagnesium:1>,
+		<technom:pureThorium:1>
 	] as IItemStack[];
 	
 	var tmPurified3 = [ <technom:pureIron:2>,
@@ -392,7 +719,18 @@
 		<technom:pureCopper:2>,
 		<technom:pureTin:2>,
 		<technom:pureSilver:2>,
-		<technom:pureLead:2>		
+		<technom:pureLead:2>,
+		<technom:pureNickel:2>,
+		<technom:purePlatinum:2>,
+		<technom:pureMithril:2>,
+		<technom:pureAluminum:2>,
+		<technom:pureUranium:2>,
+		<technom:pureOsmium:2>,
+		<technom:pureFzDarkIron:2>,
+		<technom:pureBoron:2>,
+		<technom:pureLithium:2>,
+		<technom:pureMagnesium:2>,
+		<technom:pureThorium:2>
 	] as IItemStack[];
 	
 	var tmPurified4 = [ <technom:pureIron:3>,
@@ -400,7 +738,18 @@
 		<technom:pureCopper:3>,
 		<technom:pureTin:3>,
 		<technom:pureSilver:3>,
-		<technom:pureLead:3>		
+		<technom:pureLead:3>,
+		<technom:pureNickel:3>,
+		<technom:purePlatinum:3>,
+		<technom:pureMithril:3>,
+		<technom:pureAluminum:3>,
+		<technom:pureUranium:3>,
+		<technom:pureOsmium:3>,
+		<technom:pureFzDarkIron:3>,
+		<technom:pureBoron:3>,
+		<technom:pureLithium:3>,
+		<technom:pureMagnesium:3>,
+		<technom:pureThorium:3>
 	] as IItemStack[];
 	
 	var tmPurified5 = [ <technom:pureIron:4>,
@@ -408,7 +757,18 @@
 		<technom:pureCopper:4>,
 		<technom:pureTin:4>,
 		<technom:pureSilver:4>,
-		<technom:pureLead:4>		
+		<technom:pureLead:4>,
+		<technom:pureNickel:4>,
+		<technom:purePlatinum:4>,
+		<technom:pureMithril:4>,
+		<technom:pureAluminum:4>,
+		<technom:pureUranium:4>,
+		<technom:pureOsmium:4>,
+		<technom:pureFzDarkIron:4>,
+		<technom:pureBoron:4>,
+		<technom:pureLithium:4>,
+		<technom:pureMagnesium:4>,
+		<technom:pureThorium:4>
 	] as IItemStack[];
 	
 	var tmPurified6 = [ <technom:pureIron:5>,
@@ -416,16 +776,26 @@
 		<technom:pureCopper:5>,
 		<technom:pureTin:5>,
 		<technom:pureSilver:5>,
-		<technom:pureLead:5>		
-	] as IItemStack[];
-
-#Additional lists:
-	#used for additional removal of IE ore crusher recipes
-	var ieDusts2 = [ <IC2:itemDust:7>, #tin
-		#<IC2:itemDust:3>
+		<technom:pureLead:5>,
+		<technom:pureNickel:5>,
+		<technom:purePlatinum:5>,
+		<technom:pureMithril:5>,
+		<technom:pureAluminum:5>,
+		<technom:pureUranium:5>,
+		<technom:pureOsmium:5>,
+		<technom:pureFzDarkIron:5>,
+		<technom:pureBoron:5>,
+		<technom:pureLithium:5>,
+		<technom:pureMagnesium:5>,
+		<technom:pureThorium:5>
 	] as IItemStack[];
 	
-	#used for FZ slag furnace recipes as input
+#Additional lists:
+	#used for additional removal of IE ore crusher recipes
+	var ieDusts2 = [ <IC2:itemDust:7> #tin
+	] as IItemStack[];
+	
+	#used for FZ slag furnace and Mekanism recipes as input
 	var allOres = [ <minecraft:iron_ore>,
 		<minecraft:gold_ore>,
 		<Forestry:resources:1>,
@@ -472,69 +842,181 @@
 		<factorization:ResourceBlock>
 	] as IItemStack[];
 	
-	#used for FZ slag furnace recipes as output
-	var allNuggets = [ <ThermalFoundation:material:8>,
-		<minecraft:gold_nugget>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ImmersiveEngineering:metal:23>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ImmersiveEngineering:metal:23>,
-		<ThermalFoundation:material:8>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ThermalFoundation:material:8>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<IC2:itemUran235small>,
-		<ThermalFoundation:material:99>,
-		<ThermalFoundation:material:96>,
-		<ImmersiveEngineering:metal:23>,
-		<ThermalFoundation:material:99>,
-		<ThermalFoundation:material:98>,
-		<ThermalFoundation:material:100>,
-		<aobd:nuggetOsmium>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ThermalFoundation:material:99>,
-		<ThermalFoundation:material:98>,
-		<IC2:itemUran235small>,
-		<aobd:nuggetThorium>,
-		<aobd:nuggetLithium>,
-		<aobd:nuggetBoron>,
-		<aobd:nuggetMagnesium>,
-		<ThermalFoundation:material:96>,
-		<ThermalFoundation:material:97>,
-		<ThermalFoundation:material:98>,
-		<ThermalFoundation:material:99>,
-		<ThermalFoundation:material:100>,
-		<ThermalFoundation:material:101>,
-		<ThermalFoundation:material:102>,
-		<aobd:nuggetFzDarkIron>,
-		<ThermalFoundation:material:98>
+	#used for FZ slag furnace and Mekanism recipes as output
+	var allNuggets = [ <ThermalFoundation:material:8>, #iron
+		<minecraft:gold_nugget>, #gold
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ImmersiveEngineering:metal:23>, #aluminium
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ImmersiveEngineering:metal:23>, #aluminium
+		<ThermalFoundation:material:8>, #iron
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ThermalFoundation:material:8>, #iron
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<IC2:itemUran235small>, #uranium
+		<ThermalFoundation:material:99>, #lead
+		<ThermalFoundation:material:96>, #copper
+		<ImmersiveEngineering:metal:23>, #aluminium
+		<ThermalFoundation:material:99>, #lead
+		<ThermalFoundation:material:98>, #silver
+		<ThermalFoundation:material:100>, #nickel
+		<aobd:nuggetOsmium>, #osmium
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ThermalFoundation:material:99>, #lead
+		<ThermalFoundation:material:98>, #silver
+		<IC2:itemUran235small>, #uranium
+		<aobd:nuggetThorium>, #thorium
+		<aobd:nuggetLithium>, #lithium
+		<aobd:nuggetBoron>, #boron
+		<aobd:nuggetMagnesium>, #magnesium
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ThermalFoundation:material:98>, #silver
+		<ThermalFoundation:material:99>, #lead
+		<ThermalFoundation:material:100>, #nickel
+		<ThermalFoundation:material:101>, #platinum
+		<ThermalFoundation:material:102>, #mithril
+		<aobd:nuggetFzDarkIron>, #dark iron
+		<ThermalFoundation:material:98> #silver
 	] as IItemStack[];
 	
-	#used for removal of furnace recipes as output
-	var allIngots = [ <minecraft:iron_ingot>,
-		<minecraft:gold_ingot>,
-		<IC2:itemIngot>, #copper
-		<IC2:itemIngot:1>, #tin
-		<IC2:itemIngot:6>, #silver
-		<IC2:itemIngot:5> #lead
+	#used for Mekanism recipes as output
+	var allTinyDusts = [ <IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:2>, #gold
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<aobd:dustTinyAluminum>, #aluminium
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<aobd:dustTinyAluminum>, #aluminium
+		<IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<aobd:dustTinyUranium>, #uranium
+		<IC2:itemDustSmall:5>, #lead
+		<IC2:itemDustSmall:1>, #copper
+		<aobd:dustTinyAluminum>, #aluminium
+		<IC2:itemDustSmall:5>, #lead
+		<IC2:itemDustSmall:4>, #silver
+		<aobd:dustTinyNickel>, #nickel
+		<aobd:dustTinyOsmium>, #osmium
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:5>, #lead
+		<IC2:itemDustSmall:4>, #silver
+		<aobd:dustTinyUranium>, #uranium
+		<aobd:dustTinyThorium>, #thorium
+		<IC2:itemDustSmall:7>, #lithium
+		<aobd:dustTinyBoron>, #boron
+		<aobd:dustTinyMagnesium>, #magnesium
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:4>, #silver
+		<IC2:itemDustSmall:5>, #lead
+		<aobd:dustTinyNickel>, #nickel
+		<aobd:dustTinyPlatinum>, #platinum
+		<aobd:dustTinyMithril>, #mithril
+		<aobd:dustTinyFzDarkIron>, #dark iron
+		<IC2:itemDustSmall:4> #silver
 	] as IItemStack[];
-
+	
+	#used for Mekanism Crusher Nugget recipes as input
+	var allMKCNuggets = [ <minecraft:gold_nugget>, #gold
+		<ImmersiveEngineering:metal:21>, #iron
+		<ImmersiveEngineering:metal:22>, #copper
+		<ImmersiveEngineering:metal:23>, #aluminium
+		<ImmersiveEngineering:metal:24>, #lead
+		<ImmersiveEngineering:metal:25>, #silver
+		<ImmersiveEngineering:metal:26>, #nickel
+		<MagicBees:beeNugget>, #iron
+		<MagicBees:beeNugget:1>, #copper
+		<MagicBees:beeNugget:2>, #tin
+		<MagicBees:beeNugget:3>, #silver
+		<MagicBees:beeNugget:4>, #lead
+		<Thaumcraft:ItemNugget>, #iron
+		<Thaumcraft:ItemNugget:1>, #copper
+		<Thaumcraft:ItemNugget:2>, #tin
+		<Thaumcraft:ItemNugget:3>, #silver
+		<Thaumcraft:ItemNugget:4>, #lead
+		<ThermalFoundation:material:8>, #iron
+		<ThermalFoundation:material:96>, #copper
+		<ThermalFoundation:material:97>, #tin
+		<ThermalFoundation:material:98>, #silver
+		<ThermalFoundation:material:99>, #lead
+		<ThermalFoundation:material:100>, #nickel
+		<ThermalFoundation:material:101>, #platinum
+		<ThermalFoundation:material:102>, #mithril
+		<ThermalFoundation:material:105>, #bronze
+		<aobd:nuggetUranium>, #uranium
+		<aobd:nuggetFzDarkIron>, #dark iron
+		<aobd:nuggetOsmium>, #osmium
+		<aobd:nuggetThorium>, #thorium
+		<aobd:nuggetLithium>, #lithium
+		<aobd:nuggetBoron>, #boron
+		<aobd:nuggetMagnesium>, #magnesium
+		<IC2:itemUran235small> #uranium
+	] as IItemStack[];
+	
+	#used for Mekanism Crusher Nugget recipes as output
+	var allMKCTinyDusts = [ <IC2:itemDustSmall:2>, #gold
+		<IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:1>, #copper
+		<aobd:dustTinyAluminum>, #aluminium
+		<IC2:itemDustSmall:5>, #lead
+		<IC2:itemDustSmall:4>, #silver
+		<aobd:dustTinyNickel>, #nickel
+		<IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:4>, #silver
+		<IC2:itemDustSmall:5>, #lead
+		<IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:4>, #silver
+		<IC2:itemDustSmall:5>, #lead
+		<IC2:itemDustSmall>, #iron
+		<IC2:itemDustSmall:1>, #copper
+		<IC2:itemDustSmall:3>, #tin
+		<IC2:itemDustSmall:4>, #silver
+		<IC2:itemDustSmall:5>, #lead
+		<aobd:dustTinyNickel>, #nickel
+		<aobd:dustTinyPlatinum>, #platinum
+		<aobd:dustTinyMithril>, #mithril
+		<IC2:itemDustSmall:8>, #bronze
+		<aobd:dustTinyUranium>, #uranium
+		<aobd:dustTinyFzDarkIron>, #dark iron
+		<aobd:dustTinyOsmium>, #osmium
+		<aobd:dustTinyThorium>, #thorium
+		<IC2:itemDustSmall:7>, #lithium
+		<aobd:dustTinyBoron>, #boron
+		<aobd:dustTinyMagnesium>, #magnesium
+		<aobd:dustTinyUranium> #uranium
+	] as IItemStack[];
+	
 #Recipe removal
 	#ore smelting and pulverizing
 		for i, ore in oredictOres {
 			furnace.remove(<*>, ore); #Furnace
 			recipes.remove(ieDusts[i]); #IE Engineers Hammer
 			recipes.removeShapeless(ic2Ingots[i], [<ThermalFoundation:material:512>, ore ]); #Pyrotheum			
-				#IC2 macerator can only be overwritten, not removed, done in recipe creation step.			
+			#IC2 macerator can only be overwritten, not removed, done in recipe creation step.			
 			Enrichment.removeRecipe(ore); #MK Enrichment chamber			
 			Purification.removeRecipe(mkClumps[i], ore, <gas:oxygen>); #MK purification chamber
 			Injection.removeRecipe(mkShards[i], ore, <gas:hydrogenchloride>); #MK injection chamber
@@ -547,21 +1029,23 @@
 			ISmelter.removeRecipe(<ThermalFoundation:material:512>, tfOres[i]); #TE Induction smelter Pyrotheum
 			ISmelter.removeRecipe(<ThermalExpansion:material:515>, tfOres[i]); #TE Induction smelter Rich Slag
 			ArcFurnace.removeRecipe(ieIngots[i]); #IE Arc Furnace
+			
+			#ore crafting
+			Combiner.removeRecipe(ore);
 		}
 		for dust in ieDusts2 {
 			IECrusher.removeRecipe(dust); #IE crusher
 		}
 		for ore in allOres {
 			SlagFurnace.removeRecipe(ore); #Fz Slag Furnace
-		}		
+		}
 		recipes.remove(<NuclearCraft:crusherIdle>); #NC Crusher
 		recipes.remove(<NuclearCraft:electricCrusherIdle>); #NC Electric crusher
 		recipes.remove(<NuclearCraft:factoryIdle>); #NC ManuFactory
 		#IC2 Blast Furnace and EIO Sagmill recipes are done in the configs
-		#IC2 Uranium is a separate case, I guess?
 
 	#tc clusters
-		for i, cluster in tcClusters {			
+		for i, cluster in tcClusters {
 			furnace.remove(<*>, cluster);
 			InfernalBlastfurnace.removeRecipe(ic2Ingots[i]); #WG Infernal Blast Furnace
 			RSFurnace.removeRecipe(cluster); #TE Redstone furnace
@@ -579,8 +1063,8 @@
 		for gravel in fzCleanGravels {
 			furnace.remove(<*>, gravel);
 			RSFurnace.removeRecipe(gravel); #TE Redstone furnace
+			SlagFurnace.removeRecipe(gravel); #silver
 		}
-		SlagFurnace.removeRecipe(<factorization:ore/clean:5>); #silver
 	
 	#fz reduced chunks
 		for chunk in fzReducedChunks {
@@ -590,6 +1074,7 @@
 	
 	#fz crystals
 		for crystal in fzCrystallines {
+			FZCrystallizer.removeRecipe(crystal);		
 			furnace.remove(<*>, crystal);
 			RSFurnace.removeRecipe(crystal); #TE Redstone furnace
 		}
@@ -615,7 +1100,7 @@
 	#tm purified 2
 		for purified in tmPurified2 {
 			furnace.remove(<*>, purified);
-			RSFurnace.removeRecipe(purified); #TE Redstone furnace
+			#RSFurnace.removeRecipe(purified); #TE Redstone furnace
 		}
 		
 	#tm purified 3
@@ -641,164 +1126,574 @@
 			furnace.remove(<*>, purified);
 			RSFurnace.removeRecipe(purified); #TE Redstone furnace
 		}
-		
-	#mk crystals		
-		
-	#mk shards
-	
-	#mk clumps
-	
-	#mk dirty dusts
-	
+
 
 
 #Recipe creation
-	#ores
-		for i, ore in oredictOres {
-			furnace.addRecipe(tfNuggets[i], ore, 0.5); #Furnace
-			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>.transformDamage(), ore]); #IE Engineers Hammer
-			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, ore ]); #Pyrotheum			
-				#Macerator.addRecipe(ic2TinyDusts[i] * 2, ore); #IC2 macerator can only be overwritten, not removed.
-			Enrichment.addRecipe(tfOres[i], ic2TinyDusts[i] * 2);			
-			Purification.addRecipe(tfOres[i], <gas:oxygen>, tfNuggets[i] * 2); #MK purification chamber (2x output)
-			Injection.addRecipe(tfOres[i], <gas:hydrogenchloride>, tfNuggets[i] * 3); #MK injection chamber (3x output)
-			Dissolution.addRecipe(tfOres[i], mkSlurries[i] * 110); #MK dissolution chamber
-			IECrusher.addRecipe(ic2TinyDusts[i] * 2, ore, 2500, ieCrusherSecondaries[i], 0.1);
-			RSFurnace.addRecipe(800, tfOres[i], tfNuggets[i] * 2); #TE Redstone furnace
-			Pulverizer.addRecipe(1000, tfOres[i], ic2TinyDusts[i] * 2, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2 x output)
-			ISmelter.addRecipe(1600, <minecraft:sand>, tfOres[i], tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand
-			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, tfOres[i], tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar
-			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, tfOres[i], tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum
-			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, tfOres[i], tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag
-			ArcFurnace.addRecipe(tfNuggets[i] * 2, ore, <ImmersiveEngineering:material:13>, 100, 512); 	#IE Arc Furnace
-		}		
-		#IC2 Blast Furnace recipes are done in the configs
-		for i, ore in allOres {
-		#	for ore in ores {
-				SlagFurnace.addRecipe(ore, allNuggets[i], 1.5, <minecraft:stone>, 0.4);
-		#	}		
+	#ores (1)
+		for i, input in oredictOres {
+			ManaInfusion.addAlchemy(ic2Crushed[i] * 2, tfOres[i], 1000); #Botania alchemy
+			Macerator.addRecipe(ic2Crushed[i], input); #IC2 macerator can only be overwritten, not removed.
+			Dissolution.addRecipe(tfOres[i], mkSlurries[i] * 100); #MK dissolution chamber
+			
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, tfOres[i], tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, tfOres[i], tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, tfOres[i], tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, tfOres[i], tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, tfOres[i], tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 2, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Pulverizer.addRecipe(1000, tfOres[i], ic2TinyDusts[i] * 2, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2x+ output)
+			
+			#ore crafting
+			Combiner.addRecipe(tfBlocks[i] * 3, tfOres[i]);
+			recipes.addShapeless(tfOres[i], 
+				[oreDictBlocks[i], oreDictBlocks[i], oreDictBlocks[i], 
+				oreDictIngots[i], oreDictIngots[i], oreDictIngots[i], 
+				oreDictIngots[i], oreDictIngots[i], oreDictIngots[i]]);
+			}
+		#IC2 Blast Furnace and EIO Sagmill recipes are done in the configs
+		for i, input in allOres {
+			SlagFurnace.addRecipe(input, allNuggets[i], 1.5, <minecraft:stone>, 0.4); #FZ Slag Furnace (1,5x output)
+			
+			MKCrusher.addRecipe(input, allTinyDusts[i] * 2); #MK Crusher (2x output)
+			
+			Enrichment.addRecipe(input, allTinyDusts[i] * 2); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, allNuggets[i] * 3); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, allNuggets[i] * 4); #MK injection chamber (4x output)
 		}
 
-	#dusts	
-		for i, dust in oredictDusts {
-			var tDust = ic2TinyDusts[i];
-			recipes.addShapeless(tDust * 9, [dust]);
-			recipes.addShapeless(ic2Dusts[i], [tDust, tDust, tDust, tDust, tDust, tDust, tDust, tDust, tDust]);
+	#dusts as input
+		for i, input in oredictDusts {
+			recipes.addShapeless(ic2TinyDusts[i] * 9, [input]);	
+
+			recipes.addShapeless(ic2Ingots[i], [<ThermalFoundation:material:512>, input ]); #Pyrotheum
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, ic2Dusts[i], ic2Ingots[i], <ThermalExpansion:material:514> , 100 ); #TE Induction smelter Pyrotheum
+			InfernalBlastfurnace.addRecipe(ic2Ingots[i], input, 50, null, false); #WG Infernal Blast Furnace
+		}
+		
+	#tiny dusts as input
+		for i, input in ic2TinyDusts {
+			recipes.addShapeless(ic2Dusts[i], 
+				[input, input, input, 
+				input, input, input, 
+				input, input, input]);
+			
+			furnace.addRecipe(tfNuggets[i], input); #Furnace
+			recipes.addShapeless(tfNuggets[i], [<ThermalFoundation:material:512>, input ]); #Pyrotheum
+			RSFurnace.addRecipe(800, ic2TinyDusts[i], tfNuggets[i]); #TE Redstone furnace
+			ISmelter.addRecipe(1600, <minecraft:sand>, ic2TinyDusts[i], tfNuggets[i], <ThermalExpansion:material:514> , 25 ); #TE Induction smelter Sand
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, ic2TinyDusts[i], tfNuggets[i], <ThermalExpansion:material:514> , 100 ); #TE Induction smelter Pyrotheum
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, null, false); #WG Infernal Blast Furnace
+			ArcFurnace.addRecipe(tfNuggets[i], input, <ThermalExpansion:material:514>, 100, 512); #IE Arc Furnace
+		}
+		
+	#blocks as input
+		for i, input in oreDictBlocks {
+			Lacerator.addRecipe(input, ic2Dusts[i], 9.0); #FZ Lacerator
+		}
+		
+	#ingots as input
+		for i, input in oreDictIngots {
+			recipes.addShapeless(ic2Dusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer
+			Macerator.addRecipe(ic2Dusts[i], input); #IC2 macerator
+			Lacerator.addRecipe(input, ic2Dusts[i], 1.0); #FZ Lacerator
+		}
+		
+	#nuggets as input
+		for i, input in oreDictNuggets {
+			recipes.addShaped(ic2Ingots[i], 
+				[[input, input, input],
+				[input, input, input], 
+				[input, input, input]]);
+			
+			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer
+			IECrusher.addRecipe(ic2TinyDusts[i], input, 2500); #IE Crusher
+			Pulverizer.addRecipe(1000, tfNuggets[i], ic2TinyDusts[i]); #TE Pulverizer
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 1.0); #FZ Lacerator
+		}
+		for i, input in allMKCNuggets {
+			MKCrusher.addRecipe(input, allMKCTinyDusts[i]); #MK Crusher
 		}
 
-	#ingot <-> dust (IE crusher)
-	#nugget <-> tiny dust (probably all ways)
-	#dust <-> tiny dust (probably all ways)
-	#ingot <-> nugget (probably none needed)
+	#tc clusters (2)
+		for i, input in tcClusters {
+			Lacerator.addRecipe(input, fzDirtyGravels[i], 2.5); #FZ Lacerator
+			
+			ManaInfusion.addAlchemy(ic2Crushed[i] * 5, input, 1500); #Botania alchemy
+			Macerator.addRecipe(ic2Crushed[i] * 2, input); #IC2 macerator
+			Dissolution.addRecipe(input, mkSlurries[i] * 300); #MK dissolution chamber
+			Purification.addRecipe(input, <gas:oxygen>, mkCrystals[i]); #MK purification chamber
+			Injection.addRecipe(input, <gas:hydrogenchloride>, mkShards[i]); #MK injection chamber
+			
+			furnace.addRecipe(tfNuggets[i] * 2, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 3.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 4, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 4); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] *4, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 2 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 4, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 6 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 4, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 5, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 6, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 2); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 4); #MK Crusher (2x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 4, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 4, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2x+ output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 4); #MK enrichment chamber (2x output)
+		}
+		
+	#fz dirty gravel (1)
+		for i, input in fzDirtyGravels {
+			ManaInfusion.addAlchemy(ic2Crushed[i] * 2, input, 1000); #Botania alchemy
+			Macerator.addRecipe(ic2Crushed[i], input); #IC2 macerator can only be overwritten, not removed.
+			OreWasher.addRecipe([ic2CrushedPurified[i], ic2TinyDusts[i], <IC2:itemDust:9>], input, 1000); #IC2 Orewasher
+			ThermalCentrifuge.addRecipe([ tmPurified1[i], ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], input, 2000); #IC2 Thermal Centrifuge
+			Dissolution.addRecipe(input, mkSlurries[i] * 150); #MK dissolution chamber
+			
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 1.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 2); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 3); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 4); #MK injection chamber (4x output)
+		}
 
-	#tc clusters
-		for i, cluster in tcClusters {			
-			furnace.addRecipe(tfNuggets[i] * 2, cluster, 0.5);
-			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 3, cluster, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace
-			RSFurnace.addRecipe(800, cluster, tfNuggets[i] * 3); #TE Redstone furnace
-			Pulverizer.addRecipe(1000, cluster, ic2TinyDusts[i] * 3, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 2); #TE Pulverizer (2 x output)
-			Lacerator.addRecipe(cluster, fzDirtyGravels[i], 3.5); #FZ Lacerator
+	#fz clean gravel (1)
+		for i, input in fzCleanGravels {
+			SlagFurnace.addRecipe(input, fzReducedChunks[i], 0.75, fzReducedChunks[i], 0.75);
+			
+			ManaInfusion.addAlchemy(ic2Crushed[i] * 2, input, 1000); #Botania alchemy
+			Macerator.addRecipe(ic2Crushed[i], input); #IC2 macerator can only be overwritten, not removed.
+			Dissolution.addRecipe(input, mkSlurries[i] * 175); #MK dissolution chamber
+			
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 2); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 3); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 4); #MK injection chamber (4x output)
 		}
 		
-	#fz dirty gravel
-		for i, gravel in fzDirtyGravels {
-			furnace.addRecipe(tfNuggets[i], gravel, 0.5);
-			SlagFurnace.addRecipe(gravel, tfNuggets[i], 1.1, <minecraft:dirt>, 0.2);
-			RSFurnace.addRecipe(800, gravel, tfNuggets[i] * 2); #TE Redstone furnace
+		
+	#fz reduced chunks (1)
+		for i, input in fzReducedChunks {
+			FZCrystallizer.addRecipe(input, fzCrystallines[i], <factorization:acid:1>, 1.2);
+			
+			ManaInfusion.addAlchemy(ic2Crushed[i] * 2, input, 1000); #Botania alchemy
+			Macerator.addRecipe(ic2Crushed[i], input); #IC2 macerator can only be overwritten, not removed.
+			Dissolution.addRecipe(input, mkSlurries[i] * 150); #MK dissolution chamber
+			
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 1.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 2); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 3); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 4); #MK injection chamber (4x output)
+		}
+	
+	#fz crystals (1)
+		for i, input in fzCrystallines {
+			ManaInfusion.addAlchemy(ic2Crushed[i] * 2, input, 750); #Botania alchemy
+			
+			Macerator.addRecipe(ic2Crushed[i], input); #IC2 macerator can only be overwritten, not removed.
+			Dissolution.addRecipe(input, mkSlurries[i] * 175); #MK dissolution chamber
+			Purification.addRecipe(input, <gas:oxygen>, mkCrystals[i]); #MK purification chamber
+			Injection.addRecipe(input, <gas:hydrogenchloride>, mkShards[i]); #MK injection chamber
+		
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 1.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 2); #MK Crusher (2x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 2, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 2, tfPulvSecondaries[i], tfPulvSecondaryChances[i]); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 3.0); #FZ Lacerator (3x output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 2); #MK enrichment chamber (2x output)
 		}
 
-	#fz clean gravel
-		for i, gravel in fzCleanGravels {
-			furnace.addRecipe(tfNuggets[i], gravel, 0.5);
-			RSFurnace.addRecipe(800, gravel, tfNuggets[i] * 2); #TE Redstone furnace
-		}
-		SlagFurnace.addRecipe(<factorization:ore/clean:5>, <factorization:ore/reduced:5>, 1.25, <factorization:ore/reduced:5>, 1.25); #silver
-		
-	#fz reduced chunks
-		for i, chunk in fzReducedChunks {
-			furnace.addRecipe(tfNuggets[i], chunk, 0.5);
-			RSFurnace.addRecipe(800, chunk, tfNuggets[i] * 2); #TE Redstone furnace
-			ManaInfusion.addAlchemy(ic2Crushed[i] * 2, chunk, 1000); #Botania alchemy
-		}
-	
-	#fz crystals
-		for i, crystal in fzCrystallines {
-			furnace.addRecipe(tfNuggets[i], crystal, 0.5);
-			RSFurnace.addRecipe(800, crystal, tfNuggets[i] * 2); #TE Redstone furnace
-			ManaInfusion.addAlchemy(ic2Crushed[i] * 3, crystal, 750); #Botania alchemy
-		}
-
-	#ic2 crushed
-		for i, crushed in ic2Crushed {
-			furnace.addRecipe(tfNuggets[i], crushed, 0.5);			
-			ThermalCentrifuge.addRecipe([ ic2TinyDusts[i], ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], crushed, 2000); #thermal centrifuge in configs?
-			RSFurnace.addRecipe(800, crushed, tfNuggets[i] * 2); #TE Redstone furnace
+	#ic2 crushed (1)
+		for i, input in ic2Crushed {
+			ThermalCentrifuge.addRecipe([ tmPurified1[i], ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], input, 2000); #thermal centrifuge in configs?
+			Dissolution.addRecipe(input, mkSlurries[i] * 150); #MK dissolution chamber
+			
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 1.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 2); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 3); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 4); #MK injection chamber (4x output)
 		}
 	
-	#ic2 purified
-		for i, crushed in ic2CrushedPurified {
-			furnace.addRecipe(tfNuggets[i], crushed, 0.5);
-			ThermalCentrifuge.addRecipe([ tmPurified1[i], ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], crushed, 1000); #thermal centrifuge in configs -> into technomancy
-			RSFurnace.addRecipe(800, crushed, tfNuggets[i] * 2); #TE Redstone furnace
+	#ic2 purified (1)
+		for i, input in ic2CrushedPurified {
+			ThermalCentrifuge.addRecipe([ tmPurified1[i].withTag({Thaumcraft: 1}), ic2ThermCentSecondaries[i], <IC2:itemDust:9> ], input, 1000); #thermal centrifuge in configs -> into technomancy
+			
+			furnace.addRecipe(tfNuggets[i], input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 1.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 2, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 2); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 2, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i], input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 2, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i]); #TE Induction smelter Cinnabar (3x+ output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 2); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 3); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 4); #MK injection chamber (4x output)
 		}
 	
-	#tm purified 1
-		for i, purified in tmPurified1 {
-			furnace.addRecipe(tfNuggets[i] * 2, purified, 0.5);
-			RSFurnace.addRecipe(800, purified, tfNuggets[i] * 3); #TE Redstone furnace
+	#tm purified 1 (2)
+		for i, input in tmPurified1 {			
+			var tag = {Thaumcraft: 1} as IData;
+			
+			Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 300); #MK dissolution chamber			
+			
+			furnace.addRecipe(tfNuggets[i] * 2, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 3.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 4, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 4); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 4, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 2 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 4, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 6 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 4, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 5, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 6, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 2); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK Crusher (2x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 4, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 4, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 4, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 2); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 6.0); #FZ Lacerator (3x output)
+			
+			Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 6); #MK purification chamber (3x output)
+			Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 8); #MK injection chamber (4x output)
 		}
 		
-	#tm purified 2
-		for i, purified in tmPurified2 {
-			furnace.addRecipe(tfNuggets[i] * 3, purified, 0.5);
-			RSFurnace.addRecipe(800, purified, tfNuggets[i] * 4); #TE Redstone furnace
+	#tm purified 2 (3)
+		for i, input in tmPurified2 {
+			var tags = [ {Thaumcraft: 2} as IData,
+				{Thaumcraft: 1, Botania: 1} as IData,
+				{Thaumcraft: 1, "Blood Magic": 1} as IData
+			] as IData[];
+			
+			#for tag in tags {
+			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 400); #MK dissolution chamber
+			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, mkCrystals[i]); #MK purification chamber
+			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, mkShards[i]); #MK injection chamber
+				
+			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 6); #MK Crusher (2x output)
+				
+			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 6); #MK enrichment chamber (2x output)
+			#}		
+			
+			furnace.addRecipe(tfNuggets[i] * 3, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 4.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 6, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 6); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 6, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 6, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 9 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 6, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 7, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, ic2Ingots[i], <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, ic2Ingots[i], tfISmelterSecondaries[i], tfISmelterSecChances[i] * 3); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 4, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 6, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 6, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 6, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 3); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 9.0); #FZ Lacerator (3x output)
 		}
 		
-	#tm purified 3
-		for i, purified in tmPurified3 {
-			furnace.addRecipe(tfNuggets[i] * 4, purified, 0.5);
-			RSFurnace.addRecipe(800, purified, tfNuggets[i] * 6); #TE Redstone furnace
+	#tm purified 3 (4)
+		for i, input in tmPurified3 {
+			var tags = [ {Thaumcraft: 2, Botania: 1},
+				{Thaumcraft: 2, "Blood Magic": 1},
+				{Thaumcraft: 1, Botania: 2},
+				{Thaumcraft: 1, Botania: 1, "Blood Magic": 1},
+				{Thaumcraft: 1, "Blood Magic": 2}
+			] as IData[];
+			
+			#for tag in tags {
+			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 500); #MK dissolution chamber
+			
+			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 8); #MK Crusher (2x output)
+			
+			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 8); #MK enrichment chamber (2x output)
+			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 12); #MK purification chamber (3x output)
+			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 16); #MK injection chamber (4x output)
+			#}
+			
+			furnace.addRecipe(tfNuggets[i] * 4, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 6.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 8, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 8); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 8, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 4 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 8, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 12 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 9, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 10, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 12, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 12, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 4); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 6, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 8, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 8, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 8, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 4); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 12.0); #FZ Lacerator (3x output)
 		}
 		
-	#tm purified 4
-		for i, purified in tmPurified4 {
-			furnace.addRecipe(tfNuggets[i] * 5, purified, 0.5);
-			RSFurnace.addRecipe(800, purified, tfNuggets[i] * 7); #TE Redstone furnace
+	#tm purified 4 (5)
+		for i, input in tmPurified4 {
+			var tags = [ {Thaumcraft: 2, Botania: 2},
+				{Thaumcraft: 2, Botania: 1, "Blood Magic": 1},
+				{Thaumcraft: 2, "Blood Magic": 2},
+				{Thaumcraft: 1, Botania: 2, "Blood Magic": 1},
+				{Thaumcraft: 1, Botania: 1, "Blood Magic": 2}
+			] as IData[];
+			
+			#for tag in tags {
+			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 600); #MK dissolution chamber
+			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, mkCrystals[i] * 2); #MK purification chamber
+			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, mkShards[i] * 2); #MK injection chamber
+			
+			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 10); #MK Crusher (2x output)
+			
+			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 10); #MK enrichment chamber (2x output)
+			#}
+			
+			furnace.addRecipe(tfNuggets[i] * 5, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 7.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 10, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 10); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 10, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 5 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 10, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 15 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 11, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 12, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 15, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 15, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 5); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 7, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 10, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 10, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 10, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 5); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 15.0); #FZ Lacerator (3x output)
 		}
 		
-	#tm purified 5
-		for i, purified in tmPurified5 {
-			furnace.addRecipe(tfNuggets[i] * 6, purified, 0.5);
-			RSFurnace.addRecipe(800, purified, tfNuggets[i] * 9); #TE Redstone furnace
+	#tm purified 5 (6)
+		for i, input in tmPurified5 {
+			var tags = [ {Thaumcraft: 2, Botania: 2, "Blood Magic": 1},
+				{Thaumcraft: 2, Botania: 1, "Blood Magic": 2},
+				{Thaumcraft: 1, Botania: 2, "Blood Magic": 2}
+			] as IData[];
+			
+			#for tag in tags {
+			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 700); #MK dissolution chamber
+				
+			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 12); #MK Crusher (2x output)
+				
+			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 12); #MK enrichment chamber (2x output)
+			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 18); #MK purification chamber (3x output)
+			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 24); #MK injection chamber (4x output)
+			#}
+			
+			furnace.addRecipe(tfNuggets[i] * 6, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 9.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 12, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 12); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 12, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 6 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 12, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 18 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 14, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 15, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, ic2Ingots[i] * 3, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, ic2Ingots[i] * 3, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 6); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 9, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 12, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 12, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 12, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 6); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 18.0); #FZ Lacerator (3x output)
 		}
 		
-	#tm purified 6
-		for i, purified in tmPurified6 {
-			furnace.addRecipe(tfNuggets[i] * 7, purified, 0.5);
-			RSFurnace.addRecipe(800, purified, tfNuggets[i] * 10); #TE Redstone furnace
-			Dissolution.addRecipe(purified, mkSlurries[i] * 1200); #MK dissolution chamber
+	#tm purified 6 (7)
+		for i, input in tmPurified6 {
+			var tag = {Thaumcraft: 2, Botania: 2, "Blood Magic": 2} as IData;
+			
+			Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 800); #MK dissolution chamber
+			
+			furnace.addRecipe(tfNuggets[i] * 7, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 10.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 14, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 14); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 14, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 7 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 14, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 21 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 16, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 17, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 21, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 21, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 7); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 10, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 14); #MK Crusher (2x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 14, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 14, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 14, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 7); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 21.0); #FZ Lacerator (3x output)
+			
+			Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 14); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 21); #MK purification chamber (3x output)
+			Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 28); #MK injection chamber (4x output)
 		}
 	
-	#mk crystals
+	#mk slurries
+		for i, slurry in mkSlurries {
+			MKCrystallizer.addRecipe(slurry * 300, mkCrystals[i]);
+		}
+	
+	#mk crystals (3)
+		for i, input in mkCrystals {
+			furnace.addRecipe(tfNuggets[i] * 3, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 4.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 5, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 5); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 5, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 3 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 5, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 9 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 5, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 6, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 5, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 5, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 3); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 4, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 5); #MK Crusher (2x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 5, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 5, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 5, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 3); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 5.5); #FZ Lacerator (3x output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 5); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 5); #MK purification chamber (3x output)
+		}
+	
+	#mk shards (5)
+		for i, input in mkShards {
+			furnace.addRecipe(tfNuggets[i] * 5, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 5.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 6, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 6); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 6, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 5 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 6, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 15 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 6, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 7, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 6, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 5 ); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(ic2TinyDusts[i] * 5, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			MKCrusher.addRecipe(input, ic2TinyDusts[i] * 6); #MK Crusher (2x output)
+			IECrusher.addRecipe(ic2TinyDusts[i] * 6, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Macerator.addRecipe(ic2TinyDusts[i] * 6, input); #IC2 macerator (2x output)
+			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 6, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 5); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, ic2TinyDusts[i], 6.5); #FZ Lacerator (3x output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 6); #MK enrichment chamber (2x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 6); #MK injection chamber (4x output)
+		}
+	
+	#mk clumps (6)
+		for i, input in mkClumps {
+			furnace.addRecipe(tfNuggets[i] * 6, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 7.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 7, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 7); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 7, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 6 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 7, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 18 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 7, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 8, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 7, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 7, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 6); #TE Induction smelter Cinnabar (3x+ output)
+			
+			recipes.addShapeless(mkDirtyDusts[i], [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
+			IECrusher.addRecipe(mkDirtyDusts[i], input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
+			Pulverizer.addRecipe(1000, input, mkDirtyDusts[i], tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 6); #TE Pulverizer (2x+ output)
+			Lacerator.addRecipe(input, mkDirtyDusts[i], 1.1); #FZ Lacerator (3x output)
+			
+			Enrichment.addRecipe(input, ic2TinyDusts[i] * 7); #MK enrichment chamber (2x output)
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 7); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 7); #MK injection chamber (4x output)
+		}
 		
-	#mk shards
-	
-	#mk clumps
-	
-	#mk dirty dusts	
-
-#Crushers: IC2 Macerator, TE Pulverizer, IE Crusher, Mk Crusher, FZ Lacerator (also block -> 9 dusts), EIO Sag Mill
-#Furnaces: 
+	#mk dirty dusts (8)
+		for i, input in mkDirtyDusts {
+			furnace.addRecipe(tfNuggets[i] * 8, input, 0.5); #Furnace (1x output)
+			SlagFurnace.addRecipe(input, tfNuggets[i], 8.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
+			recipes.addShapeless(tfNuggets[i] * 8, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
+			RSFurnace.addRecipe(800, input, tfNuggets[i] * 8); #TE Redstone furnace (2x output)
+			ISmelter.addRecipe(1600, <minecraft:sand>, input, tfNuggets[i] * 8, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 8 ); #TE Induction smelter Sand (2x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:512>, input, tfNuggets[i] * 8, <ThermalExpansion:material:515> , tfISmelterRichChances[i] * 24 ); #TE Induction smelter Pyrotheum (2x output)
+			InfernalBlastfurnace.addRecipe(tfNuggets[i] * 8, input, 50, ic2TinyDusts[i], true); #WG Infernal Blast Furnace (2 - 2,5x output)
+			ArcFurnace.addRecipe(tfNuggets[i] * 9, input, <ImmersiveEngineering:material:13>, 100, 512); #IE Arc Furnace (2 - 2,5x output)
+			ISmelter.addRecipe(2000, <ThermalExpansion:material:515>, input, tfNuggets[i] * 8, <ThermalExpansion:material:514> , 75 ); #TE Induction smelter Rich Slag (3x output)
+			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 8, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 8); #TE Induction smelter Cinnabar (3x+ output)
+			
+			Purification.addRecipe(input, <gas:oxygen>, tfNuggets[i] * 8); #MK purification chamber (3x output)
+			Injection.addRecipe(input, <gas:hydrogenchloride>, tfNuggets[i] * 8); #MK injection chamber (4x output)
+		}
 
 #todo:
-#1. Everything smelts and pulverizes to nuggets and tiny dusts
-#2. Every last product in a chain can be input into the start of another chain to yield twice? the outcome of an ore?
-#3. Keep an eye on whether the first things actually need to be removed and stuff
-#4. Everything at the start of the chain is usable later in the chain?
-#TC is the first step, then Factorization, then Botania, then IC2, then Technomancy and eventually Mekanism?
+#1. Handle Uranium processing a bit differently
+#2. Make Semi-Product -> Tiny dust Sagmill recipes more complex
+#3. Other Bronze armours?
 
-#Other files: aobd.cfg, ic2/Blast_Furnace.ini, enderio/SagMillRecipes_User.xml
+#Other files are needed for the OP to work: aobd.cfg, ic2/Blast_Furnace.ini, enderio/SagMillRecipes_User.xml and enderio/AlloySmelterRecipes_User.xml
 
 #Problems
 #Fz lacerator recipes cannot be removed
-#Mk Combiner can break everything
+#IC2 Uranium is a separate case, I guess?
