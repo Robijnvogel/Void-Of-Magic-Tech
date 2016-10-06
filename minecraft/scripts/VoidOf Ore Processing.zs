@@ -1393,10 +1393,27 @@
 		}
 	
 	#tm purified 1 (2)
-		for i, input in tmPurified1 {			
-			var tag = {Thaumcraft: 1} as IData;
+		function mekanismRecipes1(i as int, input as IItemStack, mkSlurries as IGasStack[], ic2TinyDusts as IItemStack[], tfNuggets as IItemStack[])
+		{
+			var tags = [ {Thaumcraft: 1},
+				{Botania: 1},
+				{"Blood Magic": 1}
+			] as IData[];
+		
+			for tag in tags {
+				Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 300); #Mekanism dissolution chamber
+				
+				MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK Crusher (2x output)
+				
+				Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK enrichment chamber (2x output)
+				Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 6); #MK purification chamber (3x output)
+				Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 8); #MK injection chamber (4x output)
+			}
+		}
+
+		for i, input in tmPurified1 {
 			
-			Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 300); #MK dissolution chamber			
+			mekanismRecipes1(i, input, mkSlurries, ic2TinyDusts, tfNuggets);
 			
 			furnace.addRecipe(tfNuggets[i] * 2, input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 3.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
@@ -1410,33 +1427,37 @@
 			ISmelter.addRecipe(2000, <ThermalFoundation:material:20>, input, tfNuggets[i] * 6, tfISmelterSecondaries[i], tfISmelterSecChances[i] * 2); #TE Induction smelter Cinnabar (3x+ output)
 			
 			recipes.addShapeless(ic2TinyDusts[i] * 3, [<ImmersiveEngineering:tool>, input]); #IE Engineers Hammer (1 - 1,5x output)
-			MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK Crusher (2x output)
 			IECrusher.addRecipe(ic2TinyDusts[i] * 4, input, 2500, ieCrusherSecondaries[i], 0.1); #IE Crusher (2x output)
 			Macerator.addRecipe(ic2TinyDusts[i] * 4, input); #IC2 macerator (2x output)
 			Pulverizer.addRecipe(1000, input, ic2TinyDusts[i] * 4, tfPulvSecondaries[i], tfPulvSecondaryChances[i] * 2); #TE Pulverizer (2x+ output)
 			Lacerator.addRecipe(input, ic2TinyDusts[i], 6.0); #FZ Lacerator (3x output)
-			
-			Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 4); #MK enrichment chamber (2x output)
-			Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 6); #MK purification chamber (3x output)
-			Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 8); #MK injection chamber (4x output)
 		}
 		
 	#tm purified 2 (3)
-		for i, input in tmPurified2 {
-			var tags = [ {Thaumcraft: 2} as IData,
-				{Thaumcraft: 1, Botania: 1} as IData,
-				{Thaumcraft: 1, "Blood Magic": 1} as IData
+		function mekanismRecipes2(i as int, input as IItemStack, mkSlurries as IGasStack[], mkCrystals as IItemStack[], mkShards as IItemStack[], ic2TinyDusts as IItemStack[])
+		{
+			var tags = [ {Thaumcraft: 2},
+				{Botania: 2},
+				{"Blood Magic": 2},
+				{Thaumcraft: 1, Botania: 1},
+				{Botania: 1, "Blood Magic": 1},
+				{Thaumcraft: 1, "Blood Magic": 1}
 			] as IData[];
-			
-			#for tag in tags {
-			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 400); #MK dissolution chamber
-			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, mkCrystals[i]); #MK purification chamber
-			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, mkShards[i]); #MK injection chamber
+	
+			for tag in tags {
+				Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 400); #MK dissolution chamber
+				Purification.addRecipe(input.withTag(tag), <gas:oxygen>, mkCrystals[i]); #MK purification chamber
+				Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, mkShards[i]); #MK injection chamber
 				
-			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 6); #MK Crusher (2x output)
+				MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 6); #MK Crusher (2x output)
 				
-			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 6); #MK enrichment chamber (2x output)
-			#}		
+				Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 6); #MK enrichment chamber (2x output)
+			}
+		}
+	
+		for i, input in tmPurified2 {
+		
+			mekanismRecipes2(i, input, mkSlurries, mkCrystals, mkShards, ic2TinyDusts);
 			
 			furnace.addRecipe(tfNuggets[i] * 3, input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 4.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
@@ -1457,24 +1478,32 @@
 		}
 		
 	#tm purified 3 (4)
-		for i, input in tmPurified3 {
+		function mekanismRecipes3(i as int, input as IItemStack, mkSlurries as IGasStack[], ic2TinyDusts as IItemStack[], tfNuggets as IItemStack[])
+		{
 			var tags = [ {Thaumcraft: 2, Botania: 1},
 				{Thaumcraft: 2, "Blood Magic": 1},
+				{Botania: 2, "Blood Magic": 1},
 				{Thaumcraft: 1, Botania: 2},
 				{Thaumcraft: 1, Botania: 1, "Blood Magic": 1},
-				{Thaumcraft: 1, "Blood Magic": 2}
+				{Thaumcraft: 1, "Blood Magic": 2},
+				{Botania: 1, "Blood Magic": 2}
 			] as IData[];
+	
+			for tag in tags {
+				Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 500); #MK dissolution chamber
 			
-			#for tag in tags {
-			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 500); #MK dissolution chamber
+				MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 8); #MK Crusher (2x output)
 			
-			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 8); #MK Crusher (2x output)
-			
-			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 8); #MK enrichment chamber (2x output)
-			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 12); #MK purification chamber (3x output)
-			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 16); #MK injection chamber (4x output)
-			#}
-			
+				Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 8); #MK enrichment chamber (2x output)
+				Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 12); #MK purification chamber (3x output)
+				Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 16); #MK injection chamber (4x output)
+			}
+		}
+		
+		for i, input in tmPurified3 {
+		
+			mekanismRecipes3(i, input, mkSlurries, ic2TinyDusts, tfNuggets);
+		
 			furnace.addRecipe(tfNuggets[i] * 4, input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 6.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
 			recipes.addShapeless(tfNuggets[i] * 8, [<ThermalFoundation:material:512>, input ]); #Pyrotheum (2x output)
@@ -1494,23 +1523,30 @@
 		}
 		
 	#tm purified 4 (5)
-		for i, input in tmPurified4 {
+		function mekanismRecipes4(i as int, input as IItemStack, mkSlurries as IGasStack[], mkCrystals as IItemStack[], mkShards as IItemStack[], ic2TinyDusts as IItemStack[])
+		{
 			var tags = [ {Thaumcraft: 2, Botania: 2},
 				{Thaumcraft: 2, Botania: 1, "Blood Magic": 1},
 				{Thaumcraft: 2, "Blood Magic": 2},
+				{Botania: 2, "Blood Magic": 2},
 				{Thaumcraft: 1, Botania: 2, "Blood Magic": 1},
 				{Thaumcraft: 1, Botania: 1, "Blood Magic": 2}
 			] as IData[];
+	
+			for tag in tags {
+				Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 600); #MK dissolution chamber
+				Purification.addRecipe(input.withTag(tag), <gas:oxygen>, mkCrystals[i] * 2); #MK purification chamber
+				Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, mkShards[i] * 2); #MK injection chamber
 			
-			#for tag in tags {
-			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 600); #MK dissolution chamber
-			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, mkCrystals[i] * 2); #MK purification chamber
-			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, mkShards[i] * 2); #MK injection chamber
+				MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 10); #MK Crusher (2x output)
 			
-			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 10); #MK Crusher (2x output)
+				Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 10); #MK enrichment chamber (2x output)
+			}
+		}
+		
+		for i, input in tmPurified4 {
 			
-			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 10); #MK enrichment chamber (2x output)
-			#}
+			mekanismRecipes4(i, input, mkSlurries, mkCrystals, mkShards, ic2TinyDusts);
 			
 			furnace.addRecipe(tfNuggets[i] * 5, input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 7.5, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
@@ -1531,21 +1567,27 @@
 		}
 		
 	#tm purified 5 (6)
-		for i, input in tmPurified5 {
+		function mekanismRecipes5(i as int, input as IItemStack, mkSlurries as IGasStack[], ic2TinyDusts as IItemStack[], tfNuggets as IItemStack[])
+		{
 			var tags = [ {Thaumcraft: 2, Botania: 2, "Blood Magic": 1},
 				{Thaumcraft: 2, Botania: 1, "Blood Magic": 2},
 				{Thaumcraft: 1, Botania: 2, "Blood Magic": 2}
 			] as IData[];
-			
-			#for tag in tags {
-			#	Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 700); #MK dissolution chamber
+	
+			for tag in tags {
+				Dissolution.addRecipe(input.withTag(tag), mkSlurries[i] * 700); #MK dissolution chamber
 				
-			#	MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 12); #MK Crusher (2x output)
+				MKCrusher.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 12); #MK Crusher (2x output)
 				
-			#	Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 12); #MK enrichment chamber (2x output)
-			#	Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 18); #MK purification chamber (3x output)
-			#	Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 24); #MK injection chamber (4x output)
-			#}
+				Enrichment.addRecipe(input.withTag(tag), ic2TinyDusts[i] * 12); #MK enrichment chamber (2x output)
+				Purification.addRecipe(input.withTag(tag), <gas:oxygen>, tfNuggets[i] * 18); #MK purification chamber (3x output)
+				Injection.addRecipe(input.withTag(tag), <gas:hydrogenchloride>, tfNuggets[i] * 24); #MK injection chamber (4x output)
+			}
+		}
+		
+		for i, input in tmPurified5 {
+		
+			mekanismRecipes5(i, input, mkSlurries, ic2TinyDusts, tfNuggets);
 			
 			furnace.addRecipe(tfNuggets[i] * 6, input, 0.5); #Furnace (1x output)
 			SlagFurnace.addRecipe(input, tfNuggets[i], 9.0, <minecraft:dirt>, 0.1); #FZ Slag Furnace (1,5x output)
