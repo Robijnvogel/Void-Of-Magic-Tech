@@ -47,6 +47,8 @@
 	#14 -> Lithium
 	#15 -> Magnesium
 	#16 -> Thorium
+	#17 -> Octine
+	#18 -> Syrmorite
 
 	var oredictOres = [ <ore:oreIron>,
 		<ore:oreGold>,
@@ -64,7 +66,9 @@
 		<ore:oreBoron>,
 		<ore:oreLithium>,
 		<ore:oreMagnesium>,
-		<ore:oreThorium>		
+		<ore:oreThorium>,
+		<ore:oreOctine>,
+		<ore:oreSyrmorite>
 	] as IIngredient[];
 
 	var oredictDusts = [ <ore:dustIron>,
@@ -83,7 +87,9 @@
 		<ore:dustBoron>,
 		<ore:dustLithium>,
 		<ore:dustMagnesium>,
-		<ore:dustThorium>
+		<ore:dustThorium>,
+		<ore:dustOctine>,
+		<ore:dustSyrmorite>
 	] as IIngredient[];
 
 	var oreDictIngots = [ <ore:ingotIron>,
@@ -102,7 +108,9 @@
 		<ore:ingotBoron>,
 		<ore:ingotLithium>,
 		<ore:ingotMagnesium>,
-		<ore:ingotThorium>
+		<ore:ingotThorium>,
+		<ore:ingotOctine>,
+		<ore:ingotSyrmorite>
 	] as IIngredient[];
 
 	var oreDictNuggets = [ <ore:nuggetIron>,
@@ -121,7 +129,9 @@
 		<ore:nuggetBoron>,
 		<ore:nuggetLithium>,
 		<ore:nuggetMagnesium>,
-		<ore:nuggetThorium>
+		<ore:nuggetThorium>,
+		<ore:nuggetOctine>,
+		<ore:nuggetSyrmorite>
 	] as IIngredient[];
 	
 	var oreDictBlocks = [ <ore:blockIron>,
@@ -140,7 +150,9 @@
 		<ore:blockBoron>,
 		<ore:blockLithium>,
 		<ore:blockMagnesium>,
-		<ore:blockThorium>
+		<ore:blockThorium>,
+		<ore:blockOctine>,
+		<ore:blockSyrmorite>
 	] as IIngredient[];
 
 	var tfOres = [ <minecraft:iron_ore>,
@@ -155,11 +167,13 @@
 		<ImmersiveEngineering:ore:1>, #aluminium
 		<NuclearCraft:blockOre:4>, #uranium
 		<Mekanism:OreBlock>, #osmium
-		<factorization:DarkIronOre>, #dark iron
+		<factorization:DarkIronOre>,
 		<NuclearCraft:blockOre:8>, #boron
 		<NuclearCraft:blockOre:7>, #lithium
 		<NuclearCraft:blockOre:9>, #magnesium
-		<NuclearCraft:blockOre:5> #thorium
+		<NuclearCraft:blockOre:5>, #thorium
+		<thebetweenlands:octineOre>,
+		<thebetweenlands:syrmoriteOre>
 	] as IItemStack[];
 
 	var tfNuggets = [ <ThermalFoundation:material:8>, #iron
@@ -173,12 +187,14 @@
 		<ThermalFoundation:material:102>, #mithril
 		<ImmersiveEngineering:metal:23>, #aluminium
 		<IC2:itemUran235small>, #uranium
-		<aobd:nuggetOsmium>, #osmium
-		<aobd:nuggetFzDarkIron>, #dark iron
-		<aobd:nuggetBoron>, #boron
-		<aobd:nuggetLithium>, #lithium
-		<aobd:nuggetMagnesium>, #magnesium
-		<aobd:nuggetThorium> #thorium
+		<aobd:nuggetOsmium>,
+		<aobd:nuggetFzDarkIron>,
+		<aobd:nuggetBoron>,
+		<aobd:nuggetLithium>,
+		<aobd:nuggetMagnesium>,
+		<aobd:nuggetThorium>,
+		<aobd:nuggetOctine>,
+		<aobd:nuggetSyrmorite>
 	] as IItemStack[];
 
 	var ic2Ingots = [ <minecraft:iron_ingot>,
@@ -197,7 +213,9 @@
 		<NuclearCraft:material:43>, #boron
 		<NuclearCraft:material:42>, #lithium
 		<NuclearCraft:material:50>, #magnesium
-		<NuclearCraft:material:5> #thorium
+		<NuclearCraft:material:5>, #thorium
+		<thebetweenlands:unknownGeneric:15>, #octine
+		<thebetweenlands:unknownGeneric:14> #syrmorite
 	] as IItemStack[];
 
 	var ieIngots = [ <minecraft:iron_ingot>,
@@ -216,7 +234,9 @@
 		<NuclearCraft:material:43>, #boron
 		<NuclearCraft:material:42>, #lithium
 		<NuclearCraft:material:50>, #magnesium
-		<NuclearCraft:material:5> #thorium
+		<NuclearCraft:material:5>, #thorium
+		<thebetweenlands:unknownGeneric:15>, #octine
+		<thebetweenlands:unknownGeneric:14> #syrmorite
 	] as IItemStack[];
 	
 	var tfBlocks = [ <minecraft:iron_block>,
@@ -235,7 +255,9 @@
 		<NuclearCraft:blockBlock:9>, #boron
 		<NuclearCraft:blockBlock:8>, #lithium
 		<NuclearCraft:blockBlock:10>, #magnesium
-		<NuclearCraft:blockBlock:5> #thorium
+		<NuclearCraft:blockBlock:5>, #thorium
+		<thebetweenlands:octineBlock>,
+		<thebetweenlands:syrmoriteBlock>
 	] as IItemStack[];
 
 	var ic2Dusts = [ <IC2:itemDust:5>, #iron
@@ -250,11 +272,13 @@
 		<ImmersiveEngineering:metal:11>, #aluminium
 		<NuclearCraft:material:19>, #uranium
 		<Mekanism:Dust:2>, #osmium
-		<aobd:dustFzDarkIron>, #dark iron
+		<aobd:dustFzDarkIron>,
 		<NuclearCraft:material:45>, #boron
 		<IC2:itemDust:14>, #lithium
 		<NuclearCraft:material:51>, #magnesium
-		<NuclearCraft:material:20> #thorium
+		<NuclearCraft:material:20>, #thorium
+		<aobd:dustOctine>,
+		<aobd:dustSyrmorite>
 	] as IItemStack[];
 
 	#used for removal of IE ore + hammer -> dust recipes
@@ -274,7 +298,9 @@
 		<NuclearCraft:material:45>, #boron
 		<IC2:itemDust:14>, #lithium
 		<NuclearCraft:material:51>, #magnesium
-		<NuclearCraft:material:20> #thorium
+		<NuclearCraft:material:20>, #thorium
+		<aobd:dustOctine>,
+		<aobd:dustSyrmorite>
 	] as IItemStack[];
 
 	var ic2TinyDusts = [ <IC2:itemDustSmall>, #iron
@@ -283,17 +309,19 @@
 		<IC2:itemDustSmall:3>, #tin
 		<IC2:itemDustSmall:4>, #silver
 		<IC2:itemDustSmall:5>, #lead
-		<aobd:dustTinyNickel>, #nickel
-		<aobd:dustTinyPlatinum>, #platinum
-		<aobd:dustTinyMithril>, #mithril
+		<aobd:dustTinyNickel>,
+		<aobd:dustTinyPlatinum>,
+		<aobd:dustTinyMithril>,
 		<aobd:dustTinyAluminum>, #aluminium
-		<aobd:dustTinyUranium>, #uranium
-		<aobd:dustTinyOsmium>, #osmium
-		<aobd:dustTinyFzDarkIron>, #dark iron
-		<aobd:dustTinyBoron>, #boron
+		<aobd:dustTinyUranium>,
+		<aobd:dustTinyOsmium>,
+		<aobd:dustTinyFzDarkIron>,
+		<aobd:dustTinyBoron>,
 		<IC2:itemDustSmall:7>, #lithium
-		<aobd:dustTinyMagnesium>, #magnesium
-		<aobd:dustTinyThorium> #thorium
+		<aobd:dustTinyMagnesium>,
+		<aobd:dustTinyThorium>,
+		<aobd:dustTinyOctine>,
+		<aobd:dustTinySyrmorite>
 	] as IItemStack[];
 
 	var ic2Crushed = [ <IC2:itemCrushedOre>, #iron
@@ -312,7 +340,9 @@
 		<aobd:crushedBoron>, #boron
 		<aobd:crushedLithium>, #lithium
 		<aobd:crushedMagnesium>, #magnesium
-		<aobd:crushedThorium> #thorium
+		<aobd:crushedThorium>,
+		<aobd:crushedOctine>,
+		<aobd:crushedSyrmorite>
 	] as IItemStack[];
 
 	var ic2CrushedPurified = [ <IC2:itemPurifiedCrushedOre>, #iron
@@ -331,7 +361,9 @@
 		<aobd:crushedPurifiedBoron>, #boron
 		<aobd:crushedPurifiedLithium>, #lithium
 		<aobd:crushedPurifiedMagnesium>, #magnesium
-		<aobd:crushedPurifiedThorium> #thorium
+		<aobd:crushedPurifiedThorium>,
+		<aobd:crushedPurifiedOctine>,
+		<aobd:crushedPurifiedSyrmorite>
 	] as IItemStack[];
 
 	var mkClumps = [ <Mekanism:Clump>, #iron
@@ -350,7 +382,9 @@
 		<aobd:clumpBoron>, #boron
 		<aobd:clumpLithium>, #lithium
 		<aobd:clumpMagnesium>, #magnesium
-		<aobd:clumpThorium> #thorium
+		<aobd:clumpThorium>,
+		<aobd:clumpOctine>,
+		<aobd:clumpSyrmorite>
 	] as IItemStack[];
 
 	var mkCrystals = [<Mekanism:Crystal>, #iron
@@ -369,7 +403,9 @@
 		<aobd:crystalBoron>, #boron
 		<aobd:crystalLithium>, #lithium
 		<aobd:crystalMagnesium>, #magnesium
-		<aobd:crystalThorium> #thorium
+		<aobd:crystalThorium>,
+		<aobd:crystalOctine>,
+		<aobd:crystalSyrmorite>
 	] as IItemStack[];
 
 	var mkShards = [ <Mekanism:Shard>, #iron
@@ -388,7 +424,9 @@
 		<aobd:shardBoron>, #boron
 		<aobd:shardLithium>, #lithium
 		<aobd:shardMagnesium>, #magnesium
-		<aobd:shardThorium> #thorium
+		<aobd:shardThorium>,
+		<aobd:shardOctine>,
+		<aobd:shardSyrmorite>
 	] as IItemStack[];
 
 	var mkDirtyDusts = [ <Mekanism:DirtyDust>, #iron
@@ -407,7 +445,9 @@
 		<aobd:dustDirtyBoron>, #boron
 		<aobd:dustDirtyLithium>, #lithium
 		<aobd:dustDirtyMagnesium>, #magnesium
-		<aobd:dustDirtyThorium> #thorium
+		<aobd:dustDirtyThorium>,
+		<aobd:dustDirtyOctine>,
+		<aobd:dustDirtySyrmorite>
 	] as IItemStack[];
 
 	var mkSlurries = [ <gas:iron>,
@@ -426,7 +466,9 @@
 		<gas:Boron>,
 		<gas:Lithium>,
 		<gas:Magnesium>,
-		<gas:Thorium>
+		<gas:Thorium>,
+		<gas:Octine>,
+		<gas:Syrmorite>
 	] as IGasStack[];
 
 	var mkCleanSlurries = [ <gas:cleanIron>,
@@ -445,7 +487,9 @@
 		<gas:cleanBoron>,
 		<gas:cleanLithium>,
 		<gas:cleanMagnesium>,
-		<gas:cleanThorium>
+		<gas:cleanThorium>,
+		<gas:cleanOctine>,
+		<gas:cleanSyrmorite>
 	] as IGasStack[];
 
 	var tfISmelterRichChances = [ 5, #iron
@@ -464,7 +508,9 @@
 		5, #boron
 		5, #lithium
 		5, #magnesium
-		5 #thorium
+		5, #thorium
+		10, #octine
+		10, #syrmorite
 	] as int[];
 
 	var tfISmelterSecondaries = [ <ThermalFoundation:material:100>, #iron -> nickel
@@ -483,7 +529,9 @@
 		<aobd:nuggetBoron>, #boron -> boron
 		<aobd:nuggetLithium>, #lithium -> lithium
 		<aobd:nuggetMagnesium>, #magnesium -> magnesium
-		<aobd:nuggetThorium> #thorium -> thorium
+		<aobd:nuggetThorium>, #thorium -> thorium
+		<aobd:nuggetSyrmorite>, #octine -> syrmorite
+		<aobd:nuggetOctine> #syrmorite -> octine
 	] as IItemStack[];
 	
 	var tfISmelterSecChances = [ 100, #iron
@@ -502,7 +550,9 @@
 		100, #boron
 		100, #lithium
 		100, #magnesium
-		100 #thorium
+		100, #thorium
+		75, #octine
+		75 #syrmorite
 	] as int[];
 	
 	var tfPulvSecondaries = [ <aobd:dustTinyNickel>, #iron -> nickel
@@ -521,7 +571,9 @@
 		<aobd:dustTinyBoron>, #boron -> boron
 		<IC2:itemDustSmall:7>, #lithium -> lithium
 		<aobd:dustTinyMagnesium>, #magnesium -> magnesium
-		<aobd:dustTinyThorium> #thorium -> thorium
+		<aobd:dustTinyThorium>, #thorium -> thorium
+		<aobd:dustTinySyrmorite>, #octine -> syrmorite
+		<aobd:dustTinyOctine> #syrmorite -> octine
 	] as IItemStack[];
 	
 	var tfPulvSecondaryChances = [ 10, #iron
@@ -540,7 +592,9 @@
 		10, #boron
 		10, #lithium
 		10, #magnesium
-		10 #thorium
+		10, #thorium
+		10, #octine
+		10 #syrmorite
 	] as int[];
 	
 	var ieCrusherSecondaries = [ <aobd:dustTinyNickel>, #iron -> ferrous
@@ -559,7 +613,9 @@
 		<aobd:dustTinyBoron>, #boron
 		<IC2:itemDustSmall:7>, #lithium
 		<aobd:dustTinyMagnesium>, #magnesium
-		<aobd:dustTinyThorium> #thorium
+		<aobd:dustTinyThorium>, #thorium
+		<aobd:dustTinySyrmorite>, #octine -> syrmorite
+		<aobd:dustTinyOctine> #syrmorite -> octine
 	] as IItemStack[];
 	
 	var ic2ThermCentSecondaries = [ <aobd:dustTinyNickel>, #iron -> ferrous
@@ -578,7 +634,9 @@
 		<aobd:dustTinyBoron>, #boron
 		<IC2:itemDustSmall:7>, #lithium
 		<aobd:dustTinyMagnesium>, #magnesium
-		<aobd:dustTinyThorium> #thorium
+		<aobd:dustTinyThorium>, #thorium
+		<aobd:dustTinySyrmorite>, #octine -> syrmorite
+		<aobd:dustTinyOctine> #syrmorite -> octine
 	] as IItemStack[];
 
 	var tcClusters = [ <Thaumcraft:ItemNugget:16>, #Iron
@@ -597,7 +655,9 @@
 		<aobd:clusterBoron>, #boron
 		<aobd:clusterLithium>, #lithium
 		<aobd:clusterMagnesium>, #magnesium
-		<aobd:clusterThorium> #thorium
+		<aobd:clusterThorium>,
+		<aobd:clusterOctine>,
+		<aobd:clusterSyrmorite>
 	] as IItemStack[];
 
 	var fzCrystallines = [ <factorization:ore/crystal>, #Iron
@@ -616,7 +676,9 @@
 		<aobd:crystallineBoron>, #boron
 		<aobd:crystallineLithium>, #lithium
 		<aobd:crystallineMagnesium>, #magnesium
-		<aobd:crystallineThorium> #thorium
+		<aobd:crystallineThorium>,
+		<aobd:crystallineOctine>,
+		<aobd:crystallineSyrmorite>
 	] as IItemStack[];
 
 	var fzCleanGravels = [ <factorization:ore/clean>, #Iron
@@ -635,7 +697,9 @@
 		<aobd:cleanGravelBoron>, #boron
 		<aobd:cleanGravelLithium>, #lithium
 		<aobd:cleanGravelMagnesium>, #magnesium
-		<aobd:cleanGravelThorium> #thorium
+		<aobd:cleanGravelThorium>,
+		<aobd:cleanGravelOctine>,
+		<aobd:cleanGravelSyrmorite>
 	] as IItemStack[];
 
 	var fzReducedChunks = [ <factorization:ore/reduced>, #Iron
@@ -654,7 +718,9 @@
 		<aobd:reducedBoron>, #boron
 		<aobd:reducedLithium>, #lithium
 		<aobd:reducedMagnesium>, #magnesium
-		<aobd:reducedThorium> #thorium
+		<aobd:reducedThorium>,
+		<aobd:reducedOctine>,
+		<aobd:reducedSyrmorite>
 	] as IItemStack[];
 
 	var fzDirtyGravels = [ <factorization:ore/gravel>, #Iron
@@ -673,7 +739,9 @@
 		<aobd:dirtyGravelBoron>, #boron
 		<aobd:dirtyGravelLithium>, #lithium
 		<aobd:dirtyGravelMagnesium>, #magnesium
-		<aobd:dirtyGravelThorium> #thorium
+		<aobd:dirtyGravelThorium>,
+		<aobd:dirtyGravelOctine>,
+		<aobd:dirtyGravelSyrmorite>
 	] as IItemStack[];
 
 	var tmPurified1 = [ <technom:pureIron>,
@@ -692,7 +760,9 @@
 		<technom:pureBoron>,
 		<technom:pureLithium>,
 		<technom:pureMagnesium>,
-		<technom:pureThorium>
+		<technom:pureThorium>,
+		<technom:pureOctine>,
+		<technom:pureSyrmorite>
 	] as IItemStack[];
 	
 	var tmPurified2 = [ <technom:pureIron:1>,
@@ -711,7 +781,9 @@
 		<technom:pureBoron:1>,
 		<technom:pureLithium:1>,
 		<technom:pureMagnesium:1>,
-		<technom:pureThorium:1>
+		<technom:pureThorium:1>,
+		<technom:pureOctine:1>,
+		<technom:pureSyrmorite:1>
 	] as IItemStack[];
 	
 	var tmPurified3 = [ <technom:pureIron:2>,
@@ -730,7 +802,9 @@
 		<technom:pureBoron:2>,
 		<technom:pureLithium:2>,
 		<technom:pureMagnesium:2>,
-		<technom:pureThorium:2>
+		<technom:pureThorium:2>,
+		<technom:pureOctine:2>,
+		<technom:pureSyrmorite:2>
 	] as IItemStack[];
 	
 	var tmPurified4 = [ <technom:pureIron:3>,
@@ -749,7 +823,9 @@
 		<technom:pureBoron:3>,
 		<technom:pureLithium:3>,
 		<technom:pureMagnesium:3>,
-		<technom:pureThorium:3>
+		<technom:pureThorium:3>,
+		<technom:pureOctine:3>,
+		<technom:pureSyrmorite:3>
 	] as IItemStack[];
 	
 	var tmPurified5 = [ <technom:pureIron:4>,
@@ -768,7 +844,9 @@
 		<technom:pureBoron:4>,
 		<technom:pureLithium:4>,
 		<technom:pureMagnesium:4>,
-		<technom:pureThorium:4>
+		<technom:pureThorium:4>,
+		<technom:pureOctine:4>,
+		<technom:pureSyrmorite:4>
 	] as IItemStack[];
 	
 	var tmPurified6 = [ <technom:pureIron:5>,
@@ -787,7 +865,9 @@
 		<technom:pureBoron:5>,
 		<technom:pureLithium:5>,
 		<technom:pureMagnesium:5>,
-		<technom:pureThorium:5>
+		<technom:pureThorium:5>,
+		<technom:pureOctine:5>,
+		<technom:pureSyrmorite:5>
 	] as IItemStack[];
 	
 #Additional lists:
@@ -839,7 +919,9 @@
 		<ThermalFoundation:Ore:5>,
 		<ThermalFoundation:Ore:6>,
 		<factorization:DarkIronOre>,
-		<factorization:ResourceBlock>
+		<factorization:ResourceBlock>,
+		<thebetweenlands:octineOre>,
+		<thebetweenlands:syrmoriteOre>
 	] as IItemStack[];
 	
 	#used for FZ slag furnace and Mekanism recipes as output
@@ -886,7 +968,9 @@
 		<ThermalFoundation:material:101>, #platinum
 		<ThermalFoundation:material:102>, #mithril
 		<aobd:nuggetFzDarkIron>, #dark iron
-		<ThermalFoundation:material:98> #silver
+		<ThermalFoundation:material:98>, #silver
+		<aobd:nuggetOctine>,
+		<aobd:nuggetSyrmorite>
 	] as IItemStack[];
 	
 	#used for Mekanism recipes as output
@@ -933,7 +1017,9 @@
 		<aobd:dustTinyPlatinum>, #platinum
 		<aobd:dustTinyMithril>, #mithril
 		<aobd:dustTinyFzDarkIron>, #dark iron
-		<IC2:itemDustSmall:4> #silver
+		<IC2:itemDustSmall:4>, #silver
+		<aobd:dustTinyOctine>,
+		<aobd:dustTinySyrmorite>
 	] as IItemStack[];
 	
 	#used for Mekanism Crusher Nugget recipes as input
@@ -970,7 +1056,9 @@
 		<aobd:nuggetLithium>, #lithium
 		<aobd:nuggetBoron>, #boron
 		<aobd:nuggetMagnesium>, #magnesium
-		<IC2:itemUran235small> #uranium
+		<IC2:itemUran235small>, #uranium
+		<aobd:nuggetOctine>,
+		<aobd:nuggetSyrmorite>
 	] as IItemStack[];
 	
 	#used for Mekanism Crusher Nugget recipes as output
@@ -1007,7 +1095,9 @@
 		<IC2:itemDustSmall:7>, #lithium
 		<aobd:dustTinyBoron>, #boron
 		<aobd:dustTinyMagnesium>, #magnesium
-		<aobd:dustTinyUranium> #uranium
+		<aobd:dustTinyUranium>, #uranium
+		<aobd:dustTinyOctine>,
+		<aobd:dustTinySyrmorite>
 	] as IItemStack[];
 	
 #Recipe removal
@@ -1731,11 +1821,12 @@
 
 #todo:
 #1. Handle Uranium processing a bit differently
-#2. Make Semi-Product -> Tiny dust Sagmill recipes more complex
+#2. Make Semi-Product -> Tiny dust Sagmill recipes more complex?
 #3. Other Bronze armours?
+#4. Add Betweenlands ores to the Sagmill and Alloy Smelter configs? And armours to the armour config?
 
 #Other files are needed for the OP to work: aobd.cfg, ic2/Blast_Furnace.ini, enderio/SagMillRecipes_User.xml and enderio/AlloySmelterRecipes_User.xml
 
 #Problems
-#Fz lacerator recipes cannot be removed
+#Fz lacerator recipes cannot be removed?
 #IC2 Uranium is a separate case, I guess?

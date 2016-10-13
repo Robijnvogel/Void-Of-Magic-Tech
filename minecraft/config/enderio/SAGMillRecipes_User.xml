@@ -284,6 +284,27 @@
     </recipe>
   </recipeGroup>
   
+  <recipeGroup name="The BetweenLands" >
+	<recipe name="OctineOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" />
+        <itemStack oreDictionary="dustTinyOctine" number="1" chance="0.1" />
+      </output>
+    </recipe>
+	<recipe name="SyrmoriteOre" energyCost="3600" >
+      <input>
+        <itemStack oreDictionary="oreSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" />
+        <itemStack oreDictionary="dustTinySyrmorite" number="1" chance="0.1" />
+      </output>
+    </recipe>
+  </recipeGroup>
+  
   <recipeGroup name="VoidOf Ore Processing TCClusters" >
     <recipe name="Iron Cluster" energyCost="400" >
       <input>
@@ -419,6 +440,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Cluster" energyCost="400" >
+      <input>
+        <itemStack oreDictionary="clusterSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="4" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -560,6 +597,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="2" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Dirty Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="dirtyGravelSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing FZCleanGravels" >
@@ -697,6 +750,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Clean Gravel" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="cleanGravelSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -838,6 +907,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="2" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Reduced Chunk" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="reducedSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing FZCrystals" >
@@ -975,6 +1060,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Octine" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Crystalline Syrmorite" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crystallineSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -1116,6 +1217,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="2" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing IC2PurifiedCrushed" >
@@ -1253,6 +1370,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="2" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified Crushed" energyCost="200" >
+      <input>
+        <itemStack oreDictionary="crushedPurifiedSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="2" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -1394,6 +1527,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="4" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="4" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified1" energyCost="400" >
+      <input>
+        <itemStack modID="technom" itemName="pureSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="4" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing TMPurified2" >
@@ -1531,6 +1680,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureOctine" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified2" energyCost="600" >
+      <input>
+        <itemStack modID="technom" itemName="pureSyrmorite" itemMeta="1" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="6" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -1672,6 +1837,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="8" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureOctine" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified3" energyCost="800" >
+      <input>
+        <itemStack modID="technom" itemName="pureSyrmorite" itemMeta="2" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="8" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing TMPurified4" >
@@ -1809,6 +1990,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureOctine" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="10" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified4" energyCost="1000" >
+      <input>
+        <itemStack modID="technom" itemName="pureSyrmorite" itemMeta="3" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="10" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -1950,6 +2147,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="12" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureOctine" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="12" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified5" energyCost="1150" >
+      <input>
+        <itemStack modID="technom" itemName="pureSyrmorite" itemMeta="4" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="12" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing TMPurified6" >
@@ -2087,6 +2300,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureOctine" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="14" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Purified6" energyCost="1300" >
+      <input>
+        <itemStack modID="technom" itemName="pureSyrmorite" itemMeta="5" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="14" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -2228,6 +2457,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="6" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="6" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Crystal" energyCost="600" >
+      <input>
+        <itemStack oreDictionary="crystalSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="6" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing MKShards" >
@@ -2367,6 +2612,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="8" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Shard" energyCost="1000" >
+      <input>
+        <itemStack oreDictionary="shardSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="8" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="VoidOf Ore Processing MKClumps" >
@@ -2375,7 +2636,7 @@
         <itemStack oreDictionary="clumpIron" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyIron" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Gold Clump" energyCost="1150" >
@@ -2383,7 +2644,7 @@
         <itemStack oreDictionary="clumpGold" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="1" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyGold" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Copper Clump" energyCost="1150" >
@@ -2391,7 +2652,7 @@
         <itemStack oreDictionary="clumpCopper" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="3" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyCopper" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Tin Clump" energyCost="1150" >
@@ -2399,7 +2660,7 @@
         <itemStack oreDictionary="clumpTin" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="4" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyTin" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Silver Clump" energyCost="1150" >
@@ -2407,7 +2668,7 @@
         <itemStack oreDictionary="clumpSilver" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="5" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtySilver" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Lead Clump" energyCost="1150" >
@@ -2415,7 +2676,7 @@
         <itemStack oreDictionary="clumpLead" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="6" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyLead" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Nickel Clump" energyCost="1150" >
@@ -2423,7 +2684,7 @@
         <itemStack oreDictionary="clumpNickel" />
       </input>
       <output>
-        <itemStack oreDictionary="aobd:dustDirtyNickel" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyNickel" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Platinum Clump" energyCost="1150" >
@@ -2463,7 +2724,7 @@
         <itemStack oreDictionary="clumpOsmium" />
       </input>
       <output>
-        <itemStack oreDictionary="Mekanism:DirtyDust" itemMeta="2" number="1" exp="0.25" />
+        <itemStack oreDictionary="dustDirtyOsmium" number="1" exp="0.25" />
       </output>
     </recipe>
 	<recipe name="Dark Iron Clump" energyCost="1150" >
@@ -2504,6 +2765,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustDirtyThorium" number="1" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Octine Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustDirtyOctine" number="1" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Clump" energyCost="1150" >
+      <input>
+        <itemStack oreDictionary="clumpSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustDirtySyrmorite" number="1" exp="0.25" />
       </output>
     </recipe>
   </recipeGroup>
@@ -2645,6 +2922,22 @@
         <itemStack oreDictionary="dustTinyThorium" number="8" exp="0.25" />
       </output>
     </recipe>
+	<recipe name="Octine Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtyOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" number="8" exp="0.25" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Dirty Dust" energyCost="1500" >
+      <input>
+        <itemStack oreDictionary="dustDirtySyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" number="8" exp="0.25" />
+      </output>
+    </recipe>
   </recipeGroup>
   
   <recipeGroup name="Nuggets" >
@@ -2782,6 +3075,22 @@
       </input>
       <output>
         <itemStack oreDictionary="dustTinyThorium" />
+      </output>
+    </recipe>
+	<recipe name="Octine Nugget" energyCost="300" >
+      <input>
+        <itemStack oreDictionary="nuggetOctine" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinyOctine" />
+      </output>
+    </recipe>
+	<recipe name="Syrmorite Nugget" energyCost="300" >
+      <input>
+        <itemStack oreDictionary="nuggetSyrmorite" />
+      </input>
+      <output>
+        <itemStack oreDictionary="dustTinySyrmorite" />
       </output>
     </recipe>
   </recipeGroup>
